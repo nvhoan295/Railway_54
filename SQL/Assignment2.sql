@@ -12,3 +12,19 @@ ET_English			tinyint,
 Training_Class		varchar(50),
 Evaluation_Notes	text
 );
+-- Exercise 2:
+create table DataTypes (
+ID					int primary key auto_increment,
+`Name`				varchar(50),
+`Code`				varchar(255),
+ModifiedDate		date
+);
+
+-- Exercise 3:
+create table  DataTypes2 (
+ID					int primary key auto_increment,
+`Name`				varchar(50),
+BirthDate			date,
+`Gender`			int,
+IsDeletedFlag		bool
+);
