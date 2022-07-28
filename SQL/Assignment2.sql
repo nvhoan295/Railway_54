@@ -5,7 +5,7 @@ create table Trainee (
 TraineeID			int primary key auto_increment,
 Full_Name			varchar(50),
 Birth_Date			date,
-Gender				int,
+`Gender`			enum("Male", "Female", "unknown"),
 ET_IQ				tinyint,
 ET_Gmath			tinyint,
 ET_English			tinyint,

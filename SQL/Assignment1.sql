@@ -4,7 +4,7 @@ use Testing_System_Assignment_1;
 -- Bang 1
 create table Department (
 DepartmentID 	int primary key auto_increment,
-DepartmentName	varchar(50)
+DepartmentName	enum('Dev','Test','Scrum Master','PM')
 );
 -- Bang 2
 create table `Position` (
@@ -19,9 +19,7 @@ UserName		varchar(50),
 FullName		varchar(50),
 DepartmentID	int,
 PositionID		int,
-CreateDate		date,
-foreign key (DepartmentID) references Department(DepartmentID),
-foreign key (PositionID) references `Position`(PositionID)
+CreateDate		date
 );
 -- Bang 4
 create table `Group` (
@@ -34,8 +32,7 @@ CreateDate		Date
 create table GroupAccount (
 GroupID			int primary key,
 AccountID		varchar(50),
-JoinDate		Date,
-foreign key (GroupID) references `Group`(GroupID)
+JoinDate		Date
 );
 -- Bang 6
 create table TypeQuestion (
@@ -54,17 +51,14 @@ Content			varchar(50),
 CategoryID		int,
 TypeID			int,
 CreatorID		int,
-CreateDate		date,
-foreign key (CategoryID) references  CategoryQuestion(CategoryID),
-foreign key (TypeID) references  TypeQuestion(TypeID)
+CreateDate		date
 );
 -- Bang 9
 create table Answer (
 AnswerID		int primary key auto_increment,
 Content			varchar(50),
 QuestionID		int,
-isCorrect		int,
-foreign key (QuestionID) references  Question(QuestionID)
+isCorrect		int
 );
 -- Bang 10
 create table Exam (
@@ -79,8 +73,7 @@ CreateDate		date
 -- Bang 11
 create table ExamQuestion (
 ExamID			int primary key auto_increment,
-QuestionID		int,
-foreign key (ExamID) references  Exam(ExamID)
+QuestionID		int
 );
 
 
