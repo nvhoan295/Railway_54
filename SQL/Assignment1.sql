@@ -7,12 +7,12 @@ DepartmentID 	int primary key auto_increment,
 DepartmentName	varchar(50)
 );
 -- Bang 2
-create table Position1 (
+create table `Position` (
 PositionID		int primary key auto_increment,
 PositionName	varchar(50)
 );
 -- Bang 3
-create table Account (
+create table `Account` (
 AccountID		int primary key auto_increment,
 Email			varchar(50),
 UserName		varchar(50),
@@ -21,10 +21,10 @@ DepartmentID	int,
 PositionID		int,
 CreateDate		date,
 foreign key (DepartmentID) references Department(DepartmentID),
-foreign key (PositionID) references Position1(PositionID)
+foreign key (PositionID) references `Position`(PositionID)
 );
 -- Bang 4
-create table Group1 (
+create table `Group` (
 GroupID 		int primary key auto_increment,
 AccountID		int,
 CreatorID		int,
@@ -35,7 +35,7 @@ create table GroupAccount (
 GroupID			int primary key,
 AccountID		varchar(50),
 JoinDate		Date,
-foreign key (GroupID) references Group1(GroupID)
+foreign key (GroupID) references `Group`(GroupID)
 );
 -- Bang 6
 create table TypeQuestion (
