@@ -4,12 +4,12 @@ use Testing_System_Assignment_1;
 -- Bang 1
 create table Department (
 DepartmentID 	int primary key auto_increment,
-DepartmentName	enum('Dev','Test','Scrum Master','PM')
+DepartmentName	varchar(50)
 );
 -- Bang 2
 create table `Position` (
 PositionID		int primary key auto_increment,
-PositionName	varchar(50)
+PositionName	enum('Dev','Test','Scrum Master','PM')
 );
 -- Bang 3
 create table `Account` (
