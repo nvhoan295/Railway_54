@@ -28,9 +28,10 @@ ModifiedDate		DATETIME
 
 -- Exercise 3:
 create table  DataTypes2 (
-ID					int primary key auto_increment,
+ID					MEDIUMINT AUTO_INCREMENT primary key,
 `Name`				varchar(50),
 BirthDate			date,
-`Gender`			enum('Male','Female','Unknown'),
+`Gender`			int,
+CHECK ( `Gender` = 0 OR `Gender` = 1 OR `Gender`= NULL),
 IsDeletedFlag		ENUM('0','1')
 );
