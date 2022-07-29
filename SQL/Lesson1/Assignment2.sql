@@ -10,7 +10,8 @@ ET_IQ				tinyint,
 ET_Gmath			tinyint,
 ET_English			tinyint,
 Training_Class		varchar(50),
-Evaluation_Notes	text
+Evaluation_Notes	text,
+VTI_Account			int not null unique
 );
 -- Exercise 2:
 create table DataTypes (
