@@ -125,7 +125,8 @@ insert into `Group` (GroupName, 	CreatorID, 	CreateDate) values
 					('Nhom1', 		1 , 		'2022-04-23'),
 					('Nhom 2', 		3, 			'2022-01-12'),
 					('Nhom 3', 		2, 			'2021-03-25'),
-					('Nhom 4', 		4, 			'2020-11-20');
+					('Nhom 4', 		4, 			'2020-11-20'),
+                    ('Nhom 5', 		5, 			'2019-11-20');
                                                             
 insert into GroupAccount (GroupID, AccountID, JoinDate) values (1 , 4, '2022-01-23'),
 																(2, 5, '2011-04-26'),
