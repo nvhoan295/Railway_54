@@ -84,7 +84,7 @@ ExamID					INT AUTO_INCREMENT PRIMARY KEY,
 `Code`					VARCHAR(50),
 Title					VARCHAR(50),
 CategoryID				INT,
-Duration				TIME,
+Duration				INT,
 CreatorID				INT,
 CreateDate				DATE,
 FOREIGN KEY (CreatorID) REFERENCES `Account`(AccountID)
@@ -97,13 +97,18 @@ QuestionID				INT,
 FOREIGN KEY (ExamID) REFERENCES Exam(ExamID),
 FOREIGN KEY (QuestionID) REFERENCES Question(QuestionID)
 );
-
-insert into Department (DepartmentID, DepartmentName) values (1, 'Engineering');
-insert into Department (DepartmentID, DepartmentName) values (2, 'Accounting');
-insert into Department (DepartmentID, DepartmentName) values (3, 'Product Management');
-insert into Department (DepartmentID, DepartmentName) values (4, 'Sale');
-insert into Department (DepartmentID, DepartmentName) values (5, 'Marketing');
-
+-- Chèn dữ liệu
+insert into Department (DepartmentID, DepartmentName) values 
+							(1, 'Marketing'),
+							(2, 'Sale'),
+							(3, 'Bảo vệ'),
+							(4, 'Nhân sự'),
+							(5, 'Kỹ thuật'),
+                            (6, 'Tài chính'),
+                            (7, 'Phó giám đốc'),
+                            (8, 'Giám đốc'),
+                            (9, 'Thư kí'),
+							(10, 'Bán hàng');
 insert into `Position` (PositionID, PositionName) values (1, 'Dev');
 insert into `Position` (PositionID, PositionName) values (2, 'Test');
 insert into `Position` (PositionID, PositionName) values (3, 'Scrum Master');
@@ -114,11 +119,13 @@ insert into `Account` (AccountID, Email, Username, FullName, DepartmentID, Posit
 insert into `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate) values (3, 'lcoste2@4shared.com', 'lcoste2', 'Lesya Coste', 2, 3, '2022-04-15');
 insert into `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate) values (4, 'crossant3@columbia.edu', 'crossant3', 'Carlo Rossant', 1, 1, '2022-01-15');
 insert into `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate) values (5, 'porro4@shinystat.com', 'porro4', 'Padriac Orro', 3, 4, '2021-09-12');
+insert into `Account` (AccountID, Email, Username, FullName, DepartmentID, PositionID, CreateDate) values (6, 'diop@shinystat.com', 'poroep', 'Do Hung Tao', 2, 4, '2021-09-12');
 
-insert into `Group` (GroupName, CreatorID, CreateDate) values ( 'Nhom1', 1 , '2022-04-23'),
-															('Nhom 2', 3, '2022-01-12'),
-                                                            ('Nhom 3', 2, '2021-03-25'),
-                                                            ('Nhom 4', 4, '2020-11-20');
+insert into `Group` (GroupName, 	CreatorID, 	CreateDate) values 
+					('Nhom1', 		1 , 		'2022-04-23'),
+					('Nhom 2', 		3, 			'2022-01-12'),
+					('Nhom 3', 		2, 			'2021-03-25'),
+					('Nhom 4', 		4, 			'2020-11-20');
                                                             
 insert into GroupAccount (GroupID, AccountID, JoinDate) values (1 , 4, '2022-01-23'),
 																(2, 5, '2011-04-26'),
@@ -139,19 +146,23 @@ insert into Question (Content, CategoryID, TypeID, CreatorID, CreateDate) values
                                                                                 ('Postman là gì',3, 1, 5, '2020-04-10'),
                                                                                 ('.Ruby là gì',4, 2, 3, '2022-04-18');
 
-insert into Answer (Content, QuestionID, isCorrect) values ('Java là Ngôn ngữ lập trình bậc cao', 1, 'Đúng'),
-															('.Net là .....', 2, 'Sai'),
-                                                            ('Postman là .....', 3, 'Đúng'),
-                                                            ('Ryby là .....', 4, 'Sai');
+insert into Answer (Content, QuestionID, isCorrect) values ('Trả lời 1', 1, 'Đúng'),
+															('Trả lời 2', 1, 'Sai'),
+                                                            ('Trả lời 3', 1, 'Đúng'),
+                                                            ('Trả lời 4', 1, 'Đúng'),
+                                                            ('Trả lời 5', 2, 'Đúng'),
+                                                            ('Trả lời 6', 3, 'Đúng'),
+                                                            ('Trả lời 7', 4, 'Đúng'),
+                                                            ('Trả lời 8', 4, 'Đúng'),
+                                                            ('Trả lời 9', 4, 'Đúng');
                                                             
-insert into Exam (`Code`, Title, CategoryID, Duration, CreatorID, CreateDate) values ( 'A1', 'Tự Luận', 1, '1:00:00', 1, '2022-03-15'),
-																					( 'B1', 'Vấn Đáp', 2, '1:00:00', 1, '2022-03-15'),
-                                                                                    ( 'C1', 'Code trên máy', 3, '1:00:00', 1, '2022-03-15');
+insert into Exam (`Code`, Title, CategoryID, Duration, CreatorID, CreateDate) values ( 'A1', 'Tự Luận', 1, 60, 1, '2022-03-15'),
+																					( 'B1', 'Vấn Đáp', 2, 90, 1, '2022-03-15'),
+                                                                                    ( 'C1', 'Code trên máy', 3, 120, 1, '2022-03-15');
                                                                                     
 insert into ExamQuestion values (1, 1),
 								(2, 2),
                                 (3, 3);
-
                                                             
                                                             
 
