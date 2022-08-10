@@ -34,9 +34,10 @@ Values('Nguyễn Văn Hoàn', '1990-05-29', 'male', 20,  15, 35, 'A1', 'Lớp Ja
 SELECT * FROM Assignment2.Trainee;
 -- Question 2: Viết lệnh để lấy ra tất cả các thực tập sinh đã vượt qua bài test đầu vào, nhóm chúng thành các tháng sinh khác nhau
 SELECT 
-    MONTH(Birth_Date) AS thang_sinh
+    MONTH(Birth_Date) AS thang_sinh, COUNT(MONTH(Birth_Date)) AS SO_LUONG
 FROM
     Trainee
+WHERE ET_IQ >=11 AND ET_Gmath >= 10 AND ET_English >= 20
 GROUP BY MONTH(Birth_Date)
 ;
 
@@ -64,4 +65,8 @@ UPDATE Trainee
 SET 
     Training_Class = '2'
 WHERE
-    TraineeID = 2;
+    TraineeID = 5;
+    
+
+
+

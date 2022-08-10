@@ -12,12 +12,12 @@ ET_Gmath			INT,
 check (ET_Gmath >0 and ET_Gmath<20),
 ET_English			INT,
 check (ET_English > 0 and ET_English< 50),
-Training_Class		varchar(50),
+Training_Class		varchar(50) not null,
 Evaluation_Notes	text
 );
 
 ALTER TABLE Trainee
-ADD VTI_ACCOUNT INT not null UNIQUE AFTER TraineeID;
+ADD VTI_ACCOUNT INT not null UNIQUE;
 -- Exercise 2:
 create table DataTypes (
 ID					mediumint AUTO_INCREMENT primary key,
