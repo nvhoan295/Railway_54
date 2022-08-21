@@ -157,25 +157,49 @@ positionID: sẽ có default là developer
 departmentID: sẽ được cho vào 1 phòng chờ
 Sau đó in ra kết quả tạo thành công */
 
-
+drop procedure if exists Store_Question7;
+delimiter $$
+Create procedure Store_Question7 
+( in in_email varchar(50), 
+in in_fullName varchar(50))
+begin
+	Declare v_Username varchar(50) Default SUBSTRING_INDEX(in_email, '@', 1);
+    Declare v_DepartmentID tinyint unsigned default 11;
+    Declare v_PositionID tinyint unsigned default 1;
+    Declare v_CreateDate Datetime Default now();
+    insert into `Account`(`Email`, `Username`, `FullName`, `DepartmentID`, `PositionID`, `CreateDate`) values
+						(in_email, v_Username, in_fullName, v_DepartmentID, v_PositionID, v_CreateDate);
+End $$
+delimiter ;
+    
 
 
 -- Question 8: Viết 1 store cho phép người dùng nhập vào Essay hoặc Multiple-Choice
 -- để thống kê câu hỏi essay hoặc multiple-choice nào có content dài nhất
 
-Drop procedure if exists Store_Question8;
-DELIMITER $$
-CREATE PROCEDURE Store_Question8 ( IN NhapTypeName varchar(50))
-BEGIN
-	SELECT 
-		max(length(content))
+Drop Procedure if exists Store_Question8;
+delimiter $$
+Create Procedure Store_Question8 ( in in_TypeName varchar(50))
+begin
+	with CTE_Length as (SELECT 
+		length(Content) as SoLuong
 	FROM
 		TypeQuestion TQ
-		join 
-		Question Q on TQ.TypeID = Q.TypeID
-		where TypeName = NhapTypeName;
-END $$
-DELIMITER ;
+	join
+	Question Q on TQ.TypeID = Q.TypeID
+    where TypeName = in_TypeName)
+	SELECT 
+		QuestionID, Content
+	FROM
+		TypeQuestion TQ
+	join
+	Question Q on TQ.TypeID = Q.TypeID
+	having length(Content) = (Select max(SoLuong) from CTE_Length);
+end $$
+delimiter ;
+
+call Store_Question8('Essay');
+call Store_Question8('Multiple-Choice');
 
 -- Question 9: Viết 1 store cho phép người dùng xóa exam dựa vào ID
 Drop Procedure if exists Store_Question9;
@@ -194,18 +218,18 @@ chuyển về phòng ban default là phòng ban chờ việc */
 
 Drop procedure if exists Store_Question11;
 delimiter $$
-Create procedure Store_Question11 ( in var_DepartmentName varchar(30))
+Create procedure Store_Question11( in in_DepartmentName varchar(50))
 Begin
-	Declare v_DepartmentID varchar(30);
-    Select D1.DepartmentID into v_DepartmentID
-    from Department D1
-    where D1.DepartmentName = var_DepartmentName;
-    update Account A set A.DepartmenID = '11'
-    where A.DepartmendID = v_DepartmentID;
-    Delete from Department d
-    where d.DepartmentName = var_DepartmentName;
-End $$
+	Declare v_DepartmentID int;
+	Select
+    DepartmentID into v_DepartmentID
+    from Department
+    Where DepartmentName = in_DepartmentName;
+    Update `Account` set DepartmentID = 11 where DepartmentID = v_DepartmentID;
+    delete from Department where DepartmentName = in_DepartmentName;
+end $$
 delimiter ;
+call Store_Question11('Marketing');
 
 
 -- Question 12: Viết store để in ra mỗi tháng có bao nhiêu câu hỏi được tạo trong năm nay
