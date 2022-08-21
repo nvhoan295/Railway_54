@@ -52,7 +52,10 @@ INSERT INTO CAR_ORDER VALUES (1, 1, 'Civic', 100, 16000, '2022-11-12', '2022-12-
                             (3, 3, 'Vios', 140, 10000, '2022-11-12', '2022-12-12', 'Ha Noi', '1', 'Da Thanh Toan'),
                             (4, 5, 'Camry', 150, 20000, '2022-11-12', '2022-12-12', 'Ha Noi', '1', 'Da Thanh Toan'),
                             (5, 4, 'CROSS', 110, 18000, '2022-11-12', '2022-12-12', 'Ha Noi', '1', 'Da Thanh Toan'),
-                            (6, 2, 'Navara', 90, 11000, '2022-11-12', '2022-12-12', 'Ha Noi', '1', 'Da Thanh Toan');
+                            (6, 2, 'Navara', 90, 11000, '2022-11-12', '2022-12-12', 'Ha Noi', '1', 'Da Thanh Toan'),
+							(7, 2, 'Navara', 90, 11000, '2021-11-12', '2021-12-12', 'Ha Noi', '2', 'Da Thanh Toan'),
+							(8, 2, 'Civic', 90, 11000, '2021-11-12', '2021-12-12', 'Ha Noi', '2', 'Da Thanh Toan'),
+							(9, 2, 'CROSS', 90, 11000, '2021-11-12', '2021-12-12', 'Ha Noi', '2', 'Da Thanh Toan');
                             
                             
 -- Trả lời Câu Hỏi
@@ -97,6 +100,25 @@ Select HangBanNhieuNhat();
 
 -- 4. Viết 1 thủ tục (không có parameter) để xóa các đơn hàng đã bị hủy của
 -- những năm trước. In ra số lượng bản ghi đã bị xóa.
+DROP PROCEDURE IF EXISTS CAU4;
+DELIMITER $$
+CREATE PROCEDURE CAU4()
+BEGIN
+	Select
+	COUNT(OrderID)
+	FROM
+	CAR_ORDER
+	WHERE Staus = '2'
+	AND YEAR(OrderDate) < YEAR(NOW());
+	DELETE FROM CAR_ORDER WHERE Staus = '2'
+	AND YEAR(OrderDate) < YEAR(NOW());
+END $$
+DELIMITER ;
+CALL CAU4();
+
+
+
+
 
 -- 5. Viết 1 thủ tục (có CustomerID parameter) để in ra thông tin của các đơn
 -- hàng đã đặt hàng bao gồm: tên của khách hàng, mã đơn hàng, số lượng oto
@@ -118,4 +140,5 @@ delimiter ;
 
 call Cau5(2);
 
-
+-- 6 .Viết trigger để tránh trường hợp người dụng nhập thông tin không hợp lệ
+-- vào database (DeliveryDate < OrderDate + 15).
