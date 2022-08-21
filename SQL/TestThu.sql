@@ -114,11 +114,8 @@ BEGIN
 	AND YEAR(OrderDate) < YEAR(NOW());
 END $$
 DELIMITER ;
+
 CALL CAU4();
-
-
-
-
 
 -- 5. Viết 1 thủ tục (có CustomerID parameter) để in ra thông tin của các đơn
 -- hàng đã đặt hàng bao gồm: tên của khách hàng, mã đơn hàng, số lượng oto
@@ -142,3 +139,20 @@ call Cau5(2);
 
 -- 6 .Viết trigger để tránh trường hợp người dụng nhập thông tin không hợp lệ
 -- vào database (DeliveryDate < OrderDate + 15).
+
+DROP TRIGGER IF EXISTS Trigger_insertDate;
+DELIMITER $$
+CREATE TRIGGER Trigger_insertDate
+BEFORE INSERT ON CAR_ORDER
+FOR EACH ROW
+BEGIN 
+    if (NEW.DeliveryDate > Date_sub(new.OrderDate, interval -15 day)) then
+		SIGNAL SQLSTATE'12345'
+        SET MESSAGE_TEXT = 'NGAY KO HOP LE, DeliveryDate < OrderDate + 15';
+	END IF;
+END $$
+DELIMITER ;
+
+
+INSERT INTO CAR_ORDER VALUES (11, 1, 'Civic', 100, 16000, '2022-01-01', '2022-01-17', 'Ha Noi', '1', 'Da Thanh Toan');
+
