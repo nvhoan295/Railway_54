@@ -1,5 +1,4 @@
-package com.vti;
-import com.vti.Group;
+package Assignment1;
 import java.time.LocalDate;
 
 import javax.swing.GroupLayout.Group;
@@ -9,9 +8,8 @@ public class Account {
 	public String email;
 	public String userName;
 	public String fullName;
-	public Department department;
-	public Position position;
+	public Department departmentId;
+	public Position positionId;
 	public LocalDate createDate;
 	public Group[] groups;
-	
 }

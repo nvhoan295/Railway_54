@@ -1,6 +1,5 @@
-package com.vti;
-
+package Assignment1;
 public class CategoryQuestion {
 	public int id;
-	public int name;
+	public String name;
 }

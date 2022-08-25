@@ -1,11 +1,10 @@
-package com.vti;
-
+package Assignment1;
 import java.time.LocalDate;
 
-public class Question {
+public class Group {
 	public int id;
-	public String content;
-	public TypeQuestion type;
+	public String name;
 	public Account creator;
 	public LocalDate createDate;
+	public Account[] accounts;
 }
