@@ -25,6 +25,7 @@ public class Question2 {
 		printAccount(acc3);
 		printAccount(acc1);
 		printAccount(acc2);
+		Account[] arryAccounts = {acc1, acc2, acc3};
 	}
 	
 	public static void printAccount(Account account) {
