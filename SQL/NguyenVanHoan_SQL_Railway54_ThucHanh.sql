@@ -100,8 +100,9 @@ Begin
     Location L ON C.country_id = L.country_id
         LEFT JOIN
     Employee E ON E.location_id = L.location_id
+    where E.employee_id = new.employee_id
 	GROUP BY country_name
-	having E.employee_id = new.employee_id;
+	;
 	if (V_CountCountry > 10 ) then
 		SIGNAL SQLSTATE'12345'
         SET MESSAGE_TEXT = 'Qua 10 employee, khong them duoc nua';
