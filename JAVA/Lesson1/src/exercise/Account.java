@@ -12,6 +12,7 @@ public class Account {
 	public Department departmentID;
 	public Position positionID;
 	public LocalDate createDate;
+	public float luong;
 	public exercise.Group[] groups;
 	
 	
