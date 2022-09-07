@@ -1,5 +1,7 @@
 package Bang;
 
+import java.awt.image.SinglePixelPackedSampleModel;
+
 import Bang.GiangVien.HocVi;
 
 public class Test {
@@ -26,11 +28,15 @@ public class Test {
 		LopHoc l2 = new LopHoc(2, "KT", "Kinh tế", 3, gv1);
 		LopHoc l3 = new LopHoc(3, "QT", "Quản trị kinh doanh", 4, gv2);
 		LopHoc l4 = new LopHoc(4, "TH", "Triết học", 5, gv3);
+//		LopHoc l5 = new LopHoc(5, "HL", "Hello", 6, [sv1, sv2], gv4);
 		
-		SinhVien[] sinhViens = {sv1, sv2, sv3, sv4};
-		l1.setSinhVien(sinhViens);
-		
-		
+		l1.sinhVien = new SinhVien[] {sv1, sv2, sv3};
+		for (int i = 0; i < l1.sinhVien.length; i++) {
+			System.out.println(l1.sinhVien[i]);
+		}
+	
+		sv1.diHoc();
+		gv1.soanBai();
 		
 		
 	}

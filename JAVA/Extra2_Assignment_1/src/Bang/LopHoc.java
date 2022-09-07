@@ -7,7 +7,7 @@ public class LopHoc {
 	private String tenLop;
 	private String monHoc;
 	private int thoiGianHoc;
-	private SinhVien[] sinhVien;
+	protected SinhVien[] sinhVien;
 	private GiangVien giangVien;
 
 	
@@ -15,6 +15,7 @@ public class LopHoc {
 		super();
 	}
 
+	
 	public LopHoc(int id, String tenLop, String monHoc, int thoiGianHoc, GiangVien giangVien) {
 		super();
 		this.id = id;
@@ -23,6 +24,7 @@ public class LopHoc {
 		this.thoiGianHoc = thoiGianHoc;
 		this.giangVien = giangVien;
 	}
+
 
 	public int getId() {
 		return id;
