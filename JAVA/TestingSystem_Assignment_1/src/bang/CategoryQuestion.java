@@ -1,7 +1,11 @@
-
+package bang;
 public class CategoryQuestion {
 	private int id;
 	private CategoryName name;
+	
+	public enum CategoryName {
+		JAVA, DOT_NET, SQL, POSTMAN, RUBY
+	}
 
 	public CategoryQuestion(int id, CategoryName name) {
 		super();

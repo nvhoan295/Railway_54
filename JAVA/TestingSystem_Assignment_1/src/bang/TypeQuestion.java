@@ -1,8 +1,12 @@
+package bang;
 
 public class TypeQuestion {
 	private int id;
 	private TypeName name;
 
+	public enum TypeName {
+		ESSAY, MULTIPLE_CHOICE
+	}
 
 	public TypeQuestion(int id, TypeName name) {
 		super();

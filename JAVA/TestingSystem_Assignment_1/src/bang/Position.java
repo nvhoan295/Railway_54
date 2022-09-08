@@ -1,8 +1,11 @@
-
+package bang;
 public class Position {
 	private int id;
 	private PositionName name;
 	
+	public enum PositionName {
+		DEV, TEST, SECRUM_MASTER, PM
+	}
 	
 	public Position(int id, PositionName name) {
 		this.id = id;

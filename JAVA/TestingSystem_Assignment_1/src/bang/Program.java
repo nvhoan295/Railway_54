@@ -1,4 +1,9 @@
+package bang;
 import java.time.LocalDate;
+
+import bang.CategoryQuestion.CategoryName;
+import bang.Position.PositionName;
+import bang.TypeQuestion.TypeName;
 
 public class Program {
 	public static void main(String[] args) {
