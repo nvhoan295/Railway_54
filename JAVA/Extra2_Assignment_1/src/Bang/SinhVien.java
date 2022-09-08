@@ -1,5 +1,7 @@
 package Bang;
 
+import java.security.Identity;
+
 public class SinhVien {
 	private String id;
 	private String name;
@@ -51,8 +53,8 @@ public class SinhVien {
 		return "SinhVien [id=" + id + ", name=" + name + ", queQuan=" + queQuan + ", heDaoTao=" + heDaoTao + "]";
 	}
 	
-	public static void diHoc() {
-		System.out.println("Sinh viên đến trường học bài....");
+	public static String diHoc(SinhVien sinhVien) {
+		return "Sinh viên "+ sinhVien.name + " hằng ngày đi học";
 	}
 	
 	

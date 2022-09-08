@@ -1,7 +1,5 @@
 package Bang;
 
-import java.util.Arrays;
-
 public class LopHoc {
 	private int id;
 	private String tenLop;
@@ -10,21 +8,15 @@ public class LopHoc {
 	protected SinhVien[] sinhVien;
 	private GiangVien giangVien;
 
-	
-	public LopHoc() {
-		super();
-	}
-
-	
-	public LopHoc(int id, String tenLop, String monHoc, int thoiGianHoc, GiangVien giangVien) {
+	public LopHoc(int id, String tenLop, String monHoc, int thoiGianHoc, SinhVien[] sinhVien, GiangVien giangVien) {
 		super();
 		this.id = id;
 		this.tenLop = tenLop;
 		this.monHoc = monHoc;
 		this.thoiGianHoc = thoiGianHoc;
+		this.sinhVien = sinhVien;
 		this.giangVien = giangVien;
 	}
-
 
 	public int getId() {
 		return id;
@@ -77,7 +69,7 @@ public class LopHoc {
 	@Override
 	public String toString() {
 		return "LopHoc [id=" + id + ", tenLop=" + tenLop + ", monHoc=" + monHoc + ", thoiGianHoc=" + thoiGianHoc
-				+ ", sinhVien=" + Arrays.toString(sinhVien) + ", giangVien=" + giangVien + "]";
+				+ ", giangVien=" + giangVien + "]";
 	}
 
 }

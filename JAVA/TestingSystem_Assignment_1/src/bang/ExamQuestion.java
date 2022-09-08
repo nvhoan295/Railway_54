@@ -1,4 +1,5 @@
 package bang;
+
 public class ExamQuestion {
 	private Exam exam;
 	private Question question;
@@ -30,5 +31,4 @@ public class ExamQuestion {
 		return "ExamQuestion [exam=" + exam + ", question=" + question + "]";
 	}
 
-	
 }

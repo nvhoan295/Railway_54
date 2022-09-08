@@ -1,4 +1,5 @@
 package bang;
+
 import java.time.LocalDate;
 
 public class Exam {
@@ -83,5 +84,5 @@ public class Exam {
 		return "Exam [id=" + id + ", code=" + code + ", title=" + title + ", categoryQuestion=" + categoryQuestion
 				+ ", Duration=" + Duration + ", creator=" + creator + ", createDate=" + createDate + "]";
 	}
-	
+
 }

@@ -1,4 +1,5 @@
 package bang;
+
 import java.time.LocalDate;
 
 public class Group {
@@ -51,5 +52,5 @@ public class Group {
 	public String toString() {
 		return "Group [id=" + id + ", name=" + name + ", creator=" + creator + ", createDate=" + createDate + "]";
 	}
-	
+
 }

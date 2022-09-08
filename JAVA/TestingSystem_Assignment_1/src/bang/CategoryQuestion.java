@@ -1,8 +1,9 @@
 package bang;
+
 public class CategoryQuestion {
 	private int id;
 	private CategoryName name;
-	
+
 	public enum CategoryName {
 		JAVA, DOT_NET, SQL, POSTMAN, RUBY
 	}
@@ -33,6 +34,5 @@ public class CategoryQuestion {
 	public String toString() {
 		return "CategoryQuestion [id=" + id + ", name=" + name + "]";
 	}
-	
-	
+
 }

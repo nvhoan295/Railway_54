@@ -1,4 +1,5 @@
 package bang;
+
 import java.time.LocalDate;
 
 public class Question {
@@ -74,5 +75,4 @@ public class Question {
 				+ ", typeQuestion=" + typeQuestion + ", creator=" + creator + ", createDate=" + createDate + "]";
 	}
 
-	
 }

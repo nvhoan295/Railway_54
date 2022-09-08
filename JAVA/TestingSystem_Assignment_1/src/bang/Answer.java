@@ -1,4 +1,5 @@
 package bang;
+
 public class Answer {
 	private int id;
 	private String content;
@@ -50,5 +51,5 @@ public class Answer {
 		return "Answer [id=" + id + ", content=" + content + ", question=" + question + ", isCorrect=" + isCorrect
 				+ "]";
 	}
-	
+
 }

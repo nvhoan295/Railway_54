@@ -1,4 +1,5 @@
 package bang;
+
 import java.time.LocalDate;
 import java.util.Arrays;
 
@@ -43,5 +44,4 @@ public class GroupAccount {
 		return "GroupAccount [id=" + id + ", account=" + Arrays.toString(account) + ", joinDate=" + joinDate + "]";
 	}
 
-	
 }

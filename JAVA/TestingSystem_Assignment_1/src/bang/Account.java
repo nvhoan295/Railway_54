@@ -1,6 +1,6 @@
 package bang;
-import java.time.LocalDate;
 
+import java.time.LocalDate;
 
 public class Account {
 	private int id;
@@ -85,7 +85,5 @@ public class Account {
 		return "Account [id=" + id + ", email=" + email + ", userName=" + userName + ", fullName=" + fullName
 				+ ", department=" + department + ", position=" + position + ", createDate=" + createDate + "]";
 	}
-	
-	
 
 }

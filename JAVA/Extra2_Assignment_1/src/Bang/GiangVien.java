@@ -66,11 +66,11 @@ public class GiangVien {
 				+ luong + "]";
 	}
 
-	public static void soanBai() {
-		System.out.println("Giảng viên soạn bài trước khi lên lớp");
+	public static String soanBai(GiangVien giangVien) {
+		return "Giảng viên "+ giangVien.name + " soạn bài trước khi lên lớp";
 	}
 
-	public static void huongDanDeTai() {
-		System.out.println("Giảng viên hướng dẫn Sinh Viên làm Khoá luận");
+	public static String huongDanDeTai(GiangVien giangVien) {
+		return "Giảng viên " + giangVien.name + " hướng dẫn Sinh Viên làm Khoá luận" ;
 	}
 }

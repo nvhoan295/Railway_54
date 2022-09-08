@@ -22,20 +22,20 @@ public class Test {
 		GiangVien gv3 = new GiangVien("gv3", "Phương Mai", "Hưng Yên", HocVi.ThacSi, 8000000);
 		GiangVien gv4 = new GiangVien("gv4", "Lan Anh", "Yên Bái", HocVi.TienSi, 10000000);
 
-		LopHoc l1 = new LopHoc(1, "CNTT", "Công nghệ thông tin", 2, gv4);
-		LopHoc l2 = new LopHoc(2, "KT", "Kinh tế", 3, gv1);
-		LopHoc l3 = new LopHoc(3, "QT", "Quản trị kinh doanh", 4, gv2);
-		LopHoc l4 = new LopHoc(4, "TH", "Triết học", 5, gv3);
-//		LopHoc l5 = new LopHoc(5, "HL", "Hello", 6, [sv1, sv2], gv4);
+		LopHoc l1 = new LopHoc(1, "CNTT", "Công nghệ thông tin", 2,new SinhVien[] {sv1, sv2, sv4}, gv4);
+		LopHoc l2 = new LopHoc(2, "KT", "Kinh tế", 3,new SinhVien[] {sv1, sv2, sv4,sv5, sv6}, gv1);
+		LopHoc l3 = new LopHoc(3, "QT", "Quản trị kinh doanh", 4,new SinhVien[] {sv1, sv2, sv6}, gv2);
+		LopHoc l4 = new LopHoc(4, "TH", "Triết học", 5, new SinhVien[] {sv1, sv2,sv3, sv4, sv5, sv6}, gv3);
 		
-		l1.sinhVien = new SinhVien[] {sv1, sv2, sv3};
-		for (int i = 0; i < l1.sinhVien.length; i++) {
-			System.out.println(l1.sinhVien[i]);
+		System.out.println("-----------------");
+		System.out.println("Lớp l4 có số sinh viên là: "+ l4.sinhVien.length);
+		for (int i = 0; i < l4.sinhVien.length; i++) {
+			System.out.println((i+1) +". Họ tên sinh viên: "+ l4.sinhVien[i].getName());
 		}
-	
-		sv1.diHoc();
-		gv1.soanBai();
-		System.out.println(gv1);
+		System.out.println("-----------------");
+		System.out.println(SinhVien.diHoc(sv1));
+		System.out.println(GiangVien.soanBai(gv1));
+		System.out.println(GiangVien.huongDanDeTai(gv4));
 		
 	}
 }

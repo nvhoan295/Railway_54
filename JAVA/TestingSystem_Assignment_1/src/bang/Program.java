@@ -1,4 +1,5 @@
 package bang;
+
 import java.time.LocalDate;
 
 import bang.CategoryQuestion.CategoryName;
@@ -17,7 +18,8 @@ public class Program {
 		Position pos3 = new Position(3, PositionName.SECRUM_MASTER);
 		Position pos4 = new Position(4, PositionName.PM);
 
-		Account acc1 = new Account(1, "admin@gmail.com", "Username1", "Fullname1", dep4, pos4, LocalDate.of(2020, 12, 23));
+		Account acc1 = new Account(1, "admin@gmail.com", "Username1", "Fullname1", dep4, pos4,
+				LocalDate.of(2020, 12, 23));
 		Account acc2 = new Account(2, "Email2@gmail.com", "Username2", "Fullname2", dep1, pos4, LocalDate.now());
 		Account acc3 = new Account(3, "Email3@gmail.com", "Username2", "Fullname3", dep2, pos3, LocalDate.now());
 		Account acc4 = new Account(4, "Email4@gmail.com", "Username2", "Fullname4", dep3, pos1, LocalDate.now());
@@ -30,7 +32,8 @@ public class Program {
 		GroupAccount groupAccount1 = new GroupAccount(group1, new Account[] { acc1, acc2 }, LocalDate.now());
 		GroupAccount groupAccount2 = new GroupAccount(group2, new Account[] { acc1, acc2, acc3 }, LocalDate.now());
 		GroupAccount groupAccount3 = new GroupAccount(group3, new Account[] { acc1, acc3 }, LocalDate.now());
-		GroupAccount groupAccount4 = new GroupAccount(group4, new Account[] { acc1, acc2, acc3, acc4 }, LocalDate.now());
+		GroupAccount groupAccount4 = new GroupAccount(group4, new Account[] { acc1, acc2, acc3, acc4 },
+				LocalDate.now());
 
 		TypeQuestion typeQuestion1 = new TypeQuestion(1, TypeName.ESSAY);
 		TypeQuestion typeQuestion2 = new TypeQuestion(2, TypeName.MULTIPLE_CHOICE);
@@ -41,11 +44,15 @@ public class Program {
 		CategoryQuestion categoryQuestion4 = new CategoryQuestion(4, CategoryName.RUBY);
 		CategoryQuestion categoryQuestion5 = new CategoryQuestion(5, CategoryName.POSTMAN);
 
-		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4, LocalDate.now());
+		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4,
+				LocalDate.now());
 		Question question2 = new Question(2, "Cau hoi ve PHP", categoryQuestion2, typeQuestion2, acc1, LocalDate.now());
-		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2, LocalDate.now());
-		Question question4 = new Question(4, "Cau hoi ve .Net", categoryQuestion2, typeQuestion2, acc3, LocalDate.now());
-		Question question5 = new Question(5, "Cau hoi ve PostMan", categoryQuestion5, typeQuestion2, acc4, LocalDate.now());
+		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2,
+				LocalDate.now());
+		Question question4 = new Question(4, "Cau hoi ve .Net", categoryQuestion2, typeQuestion2, acc3,
+				LocalDate.now());
+		Question question5 = new Question(5, "Cau hoi ve PostMan", categoryQuestion5, typeQuestion2, acc4,
+				LocalDate.now());
 
 		Answer answer1 = new Answer(1, "Tra loi 01", question5, true);
 		Answer answer2 = new Answer(2, "Tra loi 02", question3, true);
@@ -78,8 +85,6 @@ public class Program {
 			System.out.println("Chức vụ: " + groupAccount4.account[i].getPosition().getName());
 			System.out.println("---------------");
 		}
-		
-
 
 	}
 }
