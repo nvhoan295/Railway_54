@@ -1,7 +1,5 @@
 package Bang;
 
-import java.awt.image.SinglePixelPackedSampleModel;
-
 import Bang.GiangVien.HocVi;
 
 public class Test {
@@ -37,7 +35,7 @@ public class Test {
 	
 		sv1.diHoc();
 		gv1.soanBai();
-		
+		System.out.println(gv1);
 		
 	}
 }
