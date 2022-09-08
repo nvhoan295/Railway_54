@@ -43,7 +43,7 @@ public class Program {
 
 		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4, LocalDate.now());
 		Question question2 = new Question(2, "Cau hoi ve PHP", categoryQuestion2, typeQuestion2, acc1, LocalDate.now());
-		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2,LocalDate.now());
+		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2, LocalDate.now());
 		Question question4 = new Question(4, "Cau hoi ve .Net", categoryQuestion2, typeQuestion2, acc3, LocalDate.now());
 		Question question5 = new Question(5, "Cau hoi ve PostMan", categoryQuestion5, typeQuestion2, acc4, LocalDate.now());
 
@@ -78,6 +78,8 @@ public class Program {
 			System.out.println("Chức vụ: " + groupAccount4.account[i].getPosition().getName());
 			System.out.println("---------------");
 		}
+		
+
 
 	}
 }

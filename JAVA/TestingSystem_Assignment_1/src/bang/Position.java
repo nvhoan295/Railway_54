@@ -32,6 +32,6 @@ public class Position {
 	public String toString() {
 		return "Position [id=" + id + ", name=" + name + "]";
 	}
-	
+
 	
 }
