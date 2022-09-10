@@ -160,48 +160,47 @@ public class Exercise1 {
 		System.out.println("Nhân viên acc2 tham gia số group là: " + acc2.groups.length);
 		if (acc2.groups == null) {
 			System.out.println("Nhân viên này chưa có group");
-		} 
-			switch (acc2.groups.length) {
-			case 1:
-				System.out.println("Group của nhân viên này là Java Fresher, C# Fresher");
-				break;
-			case 2:
-				System.out.println("Group của nhân viên này là Java Fresher, C# Fresher");
-				break;
-			case 3:
-				System.out.println("Nhân viên này là người quan trọng, tham gia nhiều group");
-				break;
-			case 4:
-				System.out.println("Nhân viên này là người hóng chuyện, tham gia tất cả các group");
-				break;
-			default:
-				break;
-			}
-			
+		}
+		switch (acc2.groups.length) {
+		case 1:
+			System.out.println("Group của nhân viên này là Java Fresher, C# Fresher");
+			break;
+		case 2:
+			System.out.println("Group của nhân viên này là Java Fresher, C# Fresher");
+			break;
+		case 3:
+			System.out.println("Nhân viên này là người quan trọng, tham gia nhiều group");
+			break;
+		case 4:
+			System.out.println("Nhân viên này là người hóng chuyện, tham gia tất cả các group");
+			break;
+		default:
+			break;
+		}
+
 //			Question 8:
 //				In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của họ
-			System.out.println("---- Question 8 ----------");
-			Account[] accounts = {acc1, acc2, acc3,acc4};
-			for (Account account : accounts) {
-				System.out.println("Email: "+ account.getEmail());
-				System.out.println("FullName: "+ account.getFullName());
-				System.out.println("DepartmentName: "+ account.getDepartment().getName());
-				System.out.println("-------------------");
-			}
-			
+		System.out.println("---- Question 8 ----------");
+		Account[] accounts = { acc1, acc2, acc3, acc4 };
+		for (Account account : accounts) {
+			System.out.println("Email: " + account.getEmail());
+			System.out.println("FullName: " + account.getFullName());
+			System.out.println("DepartmentName: " + account.getDepartment().getName());
+			System.out.println("-------------------");
+		}
+
 //			Question 9:
 //				In ra thông tin các phòng ban bao gồm: id và name
-			
-			System.out.println("----- Question 9 -------");
-			Department[] departments = {dep1, dep2, dep3, dep4};
-			System.out.println("Thông tin các phòng ban");
-			for (Department department : departments) {
-				System.out.println("DepartmentID: "+ department.getId());
-				System.out.println("DepartmentName: "+ department.getName());
-				System.out.println("--------------------");
-			}
-			
-			
+
+		System.out.println("----- Question 9 -------");
+		Department[] departments = { dep1, dep2, dep3, dep4 };
+		System.out.println("Thông tin các phòng ban");
+		for (Department department : departments) {
+			System.out.println("DepartmentID: " + department.getId());
+			System.out.println("DepartmentName: " + department.getName());
+			System.out.println("--------------------");
+		}
+
 //			Question 10:
 //				In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của
 //				họ theo định dạng như sau:
@@ -221,73 +220,146 @@ public class Exercise1 {
 //				Thông tin department thứ 2 là:
 //				Id: 2
 //				Name: Marketing
-			System.out.println("----- Question 10 --------");
-			
-			for (int i = 0; i < accounts.length; i++) {
-				System.out.println("Thông tin account thứ "+ (i+1)+" là: ");
-				System.out.println("Email: "+ accounts[i].getEmail());
-				System.out.println("FullName: "+ accounts[i].getFullName());
-				System.out.println("DepartmentName: "+ accounts[i].getDepartment().getName());
-				System.out.println("PositionName: "+ accounts[i].getPosition().getName());
-				System.out.println("----------------------");
-			}
-			
+		System.out.println("----- Question 10 --------");
+
+		for (int i = 0; i < accounts.length; i++) {
+			System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+			System.out.println("Email: " + accounts[i].getEmail());
+			System.out.println("FullName: " + accounts[i].getFullName());
+			System.out.println("DepartmentName: " + accounts[i].getDepartment().getName());
+			System.out.println("PositionName: " + accounts[i].getPosition().getName());
+			System.out.println("----------------------");
+		}
+
+//			Question 11:
+//			In ra thông tin các phòng ban bao gồm: id và name theo định dạng sau:
+//			Thông tin department thứ 1 là:
+//			Id: 1
+//			Name: Sale
+//			Thông tin department thứ 2 là:
+//			Id: 2
+//			Name: Marketing
+		System.out.println("---- Question 11 -----");
+		for (int i = 0; i < departments.length; i++) {
+			System.out.println("DepartmentID: " + departments[i].getId());
+			System.out.println("DepartmentName: " + departments[i].getName());
+			System.out.println("--------------------");
+		}
+
 //			Question 12:
 //				Chỉ in ra thông tin 2 department đầu tiên theo định dạng như Question 10
-			System.out.println("---- Question 12 --------");
-			System.out.println("Thông tin Department đầu tiền");
-			for (int i = 0; i < accounts.length; i++) {
-				if (i < 2) {
-					System.out.println("Thông tin account thứ "+ (i+1)+" là: ");
-					System.out.println("Email: "+ accounts[i].getEmail());
-					System.out.println("FullName: "+ accounts[i].getFullName());
-					System.out.println("DepartmentName: "+ accounts[i].getDepartment().getName());
-					System.out.println("PositionName: "+ accounts[i].getPosition().getName());
-					System.out.println("----------------------");
-				}
+		System.out.println("---- Question 12 --------");
+		System.out.println("Thông tin Department đầu tiền");
+		for (int i = 0; i < accounts.length; i++) {
+			if (i < 2) {
+				System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+				System.out.println("Email: " + accounts[i].getEmail());
+				System.out.println("FullName: " + accounts[i].getFullName());
+				System.out.println("DepartmentName: " + accounts[i].getDepartment().getName());
+				System.out.println("PositionName: " + accounts[i].getPosition().getName());
+				System.out.println("----------------------");
 			}
+		}
 //			Question 13:
 //				In ra thông tin tất cả các account ngoại trừ account thứ 2
-			
-			System.out.println("---- Question 13 -------");
-			for (int i = 0; i < accounts.length; i++) {
-				if (i != 1) {
-					System.out.println("Thông tin account thứ "+ (i+1)+" là: ");
-					System.out.println("Email: "+ accounts[i].getEmail());
-					System.out.println("FullName: "+ accounts[i].getFullName());
-					System.out.println("DepartmentName: "+ accounts[i].getDepartment().getName());
-					System.out.println("PositionName: "+ accounts[i].getPosition().getName());
-					System.out.println("----------------------");
-				}
+
+		System.out.println("---- Question 13 -------");
+		for (int i = 0; i < accounts.length; i++) {
+			if (i != 1) {
+				System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+				System.out.println("Email: " + accounts[i].getEmail());
+				System.out.println("FullName: " + accounts[i].getFullName());
+				System.out.println("DepartmentName: " + accounts[i].getDepartment().getName());
+				System.out.println("PositionName: " + accounts[i].getPosition().getName());
+				System.out.println("----------------------");
 			}
-			
+		}
+
 //			Question 14:
 //				In ra thông tin tất cả các account có id < 4
-			System.out.println("---- Question 14 -------");
-			for (int i = 0; i < accounts.length; i++) {
-				if (i != 3) {
-					System.out.println("Thông tin account thứ "+ (i+1)+" là: ");
-					System.out.println("Email: "+ accounts[i].getEmail());
-					System.out.println("FullName: "+ accounts[i].getFullName());
-					System.out.println("DepartmentName: "+ accounts[i].getDepartment().getName());
-					System.out.println("PositionName: "+ accounts[i].getPosition().getName());
-					System.out.println("----------------------");
-				}
+		System.out.println("---- Question 14 -------");
+		for (int i = 0; i < accounts.length; i++) {
+			if (i != 3) {
+				System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+				System.out.println("Email: " + accounts[i].getEmail());
+				System.out.println("FullName: " + accounts[i].getFullName());
+				System.out.println("DepartmentName: " + accounts[i].getDepartment().getName());
+				System.out.println("PositionName: " + accounts[i].getPosition().getName());
+				System.out.println("----------------------");
 			}
-			
+		}
+
 //			Question 15:
 //				In ra các số chẵn nhỏ hơn hoặc bằng 20
-			System.out.println("------ Question 15 -------");
-			System.out.println("Các số chẵn nhỏ hơn hoặc bằng 20");
-			for (int i = 0; i <= 20; i++) {
-				if(i % 2 == 0) {
-					System.out.printf("%d ", i);
-				}
+		System.out.println("------ Question 15 -------");
+		System.out.println("Các số chẵn nhỏ hơn hoặc bằng 20");
+		for (int i = 0; i <= 20; i++) {
+			if (i % 2 == 0) {
+				System.out.println(i);
+
 			}
-			
+		}
+
 //			WHILE
 //			Question 16:
 //			Làm lại các Question ở phần FOR bằng cách sử dụng WHILE kết hợp với
 //			lệnh break, continue
+		System.out.println("----- Question 16 , 10 --------");
+		int i = 0;
+		while (i < accounts.length) {
+			System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+			System.out.println("Email: " + accounts[i].getEmail());
+			System.out.println("FullName: " + accounts[i].getFullName());
+			System.out.println("DepartmentName: " + accounts[i].getDepartment().getName());
+			System.out.println("PositionName: " + accounts[i].getPosition().getName());
+			System.out.println("----------------------");
+			i++;
+		}
+
+		// In ra thông tin tất cả các account ngoại trừ account thứ 2
+
+		System.out.println("----- 16, 13 -----");
+		int k = 0;
+		while (k < accounts.length) {
+			if (k != 1) {
+				System.out.println("Thông tin account thứ " + (k + 1) + " là: ");
+				System.out.println("Email: " + accounts[k].getEmail());
+				System.out.println("FullName: " + accounts[k].getFullName());
+				System.out.println("DepartmentName: " + accounts[k].getDepartment().getName());
+				System.out.println("PositionName: " + accounts[k].getPosition().getName());
+				System.out.println("----------------------");
+			}
+			k++;
+		}
+
+		// Vòng lặp Do - While
+		System.out.println("----- Question 17 , 10 -------");
+		System.out.println("Do - While");
+		int j = 0;
+		do {
+			System.out.println("Thông tin account thứ " + (j + 1) + " là: ");
+			System.out.println("Email: " + accounts[j].getEmail());
+			System.out.println("FullName: " + accounts[j].getFullName());
+			System.out.println("DepartmentName: " + accounts[j].getDepartment().getName());
+			System.out.println("PositionName: " + accounts[j].getPosition().getName());
+			System.out.println("----------------------");
+			j++;
+		} while (j < accounts.length);
+
+		System.out.println("------  Question 17, 13 ---------");
+//		In ra thông tin tất cả các account ngoại trừ account thứ 2
+		int j1 = 0;
+		do {
+			if (j1 != 1) {
+				System.out.println("Thông tin account thứ " + (j1 + 1) + " là: ");
+				System.out.println("Email: " + accounts[j1].getEmail());
+				System.out.println("FullName: " + accounts[j1].getFullName());
+				System.out.println("DepartmentName: " + accounts[j1].getDepartment().getName());
+				System.out.println("PositionName: " + accounts[j1].getPosition().getName());
+				System.out.println("----------------------");
+			}
+			j1++;
+		} while (j1 < accounts.length);
+
 	}
 }
