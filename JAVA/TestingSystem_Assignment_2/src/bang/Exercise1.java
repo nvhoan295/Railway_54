@@ -1,6 +1,6 @@
 package bang;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import bang.CategoryQuestion.CategoryName;
 import bang.Position.PositionName;
@@ -18,22 +18,20 @@ public class Exercise1 {
 		Position pos3 = new Position(3, PositionName.SECRUM_MASTER);
 		Position pos4 = new Position(4, PositionName.PM);
 
-		Account acc1 = new Account(1, "admin@gmail.com", "Username1", "Fullname1", dep4, pos1,
-				LocalDate.of(2020, 12, 23));
-		Account acc2 = new Account(2, "Email2@gmail.com", "Username2", "Fullname2", dep1, pos4, LocalDate.now());
-		Account acc3 = new Account(3, "Email3@gmail.com", "Username2", "Fullname3", dep2, pos3, LocalDate.now());
-		Account acc4 = new Account(4, "Email4@gmail.com", "Username2", "Fullname4", dep3, pos1, LocalDate.now());
+		Account acc1 = new Account(1, "admin@gmail.com", "Username1", "Fullname1", dep4, pos1, new Date());
+		Account acc2 = new Account(2, "Email2@gmail.com", "Username2", "Fullname2", dep1, pos4, new Date());
+		Account acc3 = new Account(3, "Email3@gmail.com", "Username2", "Fullname3", dep2, pos3, new Date());
+		Account acc4 = new Account(4, "Email4@gmail.com", "Username2", "Fullname4", dep3, pos1, new Date());
 
-		Group group1 = new Group(1, "Testing System", acc4, LocalDate.now());
-		Group group2 = new Group(2, "Development", acc1, LocalDate.now());
-		Group group3 = new Group(3, "VTI Sale 01", acc2, LocalDate.now());
-		Group group4 = new Group(4, "Management", acc4, LocalDate.now());
+		Group group1 = new Group(1, "Testing System", acc4, new Date());
+		Group group2 = new Group(2, "Development", acc1, new Date());
+		Group group3 = new Group(3, "VTI Sale 01", acc2, new Date());
+		Group group4 = new Group(4, "Management", acc4, new Date());
 
-		GroupAccount groupAccount1 = new GroupAccount(group1, new Account[] { acc1, acc2 }, LocalDate.now());
-		GroupAccount groupAccount2 = new GroupAccount(group2, new Account[] { acc1, acc2, acc3 }, LocalDate.now());
-		GroupAccount groupAccount3 = new GroupAccount(group3, new Account[] { acc1, acc3 }, LocalDate.now());
-		GroupAccount groupAccount4 = new GroupAccount(group4, new Account[] { acc1, acc2, acc3, acc4 },
-				LocalDate.now());
+		GroupAccount groupAccount1 = new GroupAccount(group1, new Account[] { acc1, acc2 }, new Date());
+		GroupAccount groupAccount2 = new GroupAccount(group2, new Account[] { acc1, acc2, acc3 }, new Date());
+		GroupAccount groupAccount3 = new GroupAccount(group3, new Account[] { acc1, acc3 }, new Date());
+		GroupAccount groupAccount4 = new GroupAccount(group4, new Account[] { acc1, acc2, acc3, acc4 }, new Date());
 
 		acc2.groups = new Group[] { group1, group2, group4 };
 
@@ -46,15 +44,11 @@ public class Exercise1 {
 		CategoryQuestion categoryQuestion4 = new CategoryQuestion(4, CategoryName.RUBY);
 		CategoryQuestion categoryQuestion5 = new CategoryQuestion(5, CategoryName.POSTMAN);
 
-		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4,
-				LocalDate.now());
-		Question question2 = new Question(2, "Cau hoi ve PHP", categoryQuestion2, typeQuestion2, acc1, LocalDate.now());
-		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2,
-				LocalDate.now());
-		Question question4 = new Question(4, "Cau hoi ve .Net", categoryQuestion2, typeQuestion2, acc3,
-				LocalDate.now());
-		Question question5 = new Question(5, "Cau hoi ve PostMan", categoryQuestion5, typeQuestion2, acc4,
-				LocalDate.now());
+		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4,new Date());
+		Question question2 = new Question(2, "Cau hoi ve PHP", categoryQuestion2, typeQuestion2, acc1, new Date());
+		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2,new Date());
+		Question question4 = new Question(4, "Cau hoi ve .Net", categoryQuestion2, typeQuestion2, acc3,new Date());
+		Question question5 = new Question(5, "Cau hoi ve PostMan", categoryQuestion5, typeQuestion2, acc4,new Date());
 
 		Answer answer1 = new Answer(1, "Tra loi 01", question5, true);
 		Answer answer2 = new Answer(2, "Tra loi 02", question3, true);
@@ -65,12 +59,12 @@ public class Exercise1 {
 		Answer answer7 = new Answer(7, "Tra loi 07", question1, true);
 		Answer answer8 = new Answer(8, "Tra loi 08", question5, true);
 
-		Exam exam1 = new Exam(1, "VTIQ001", "Đề thi C#", categoryQuestion1, 60, acc4, LocalDate.now());
-		Exam exam2 = new Exam(2, "VTIQ002", "Đề thi PHP", categoryQuestion2, 120, acc3, LocalDate.now());
-		Exam exam3 = new Exam(3, "VTIQ003", "Đề thi .Net", categoryQuestion3, 90, acc2, LocalDate.now());
-		Exam exam4 = new Exam(4, "VTIQ004", "Đề thi Java", categoryQuestion5, 60, acc1, LocalDate.now());
-		Exam exam5 = new Exam(5, "VTIQ005", "Đề thi SQL", categoryQuestion4, 90, acc2, LocalDate.now());
-		Exam exam6 = new Exam(6, "VTIQ006", "Đề thi C#", categoryQuestion3, 120, acc1, LocalDate.now());
+		Exam exam1 = new Exam(1, "VTIQ001", "Đề thi C#", categoryQuestion1, 60, acc4, new Date());
+		Exam exam2 = new Exam(2, "VTIQ002", "Đề thi PHP", categoryQuestion2, 120, acc3, new Date());
+		Exam exam3 = new Exam(3, "VTIQ003", "Đề thi .Net", categoryQuestion3, 90, acc2, new Date());
+		Exam exam4 = new Exam(4, "VTIQ004", "Đề thi Java", categoryQuestion5, 60, acc1, new Date());
+		Exam exam5 = new Exam(5, "VTIQ005", "Đề thi SQL", categoryQuestion4, 90, acc2, new Date());
+		Exam exam6 = new Exam(6, "VTIQ006", "Đề thi C#", categoryQuestion3, 120, acc1, new Date());
 
 		ExamQuestion examQuestion1 = new ExamQuestion(exam1, question4);
 		ExamQuestion examQuestion2 = new ExamQuestion(exam2, question2);

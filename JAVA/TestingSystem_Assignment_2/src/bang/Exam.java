@@ -1,24 +1,24 @@
 package bang;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Exam {
 	private int id;
 	private String code;
 	private String title;
 	private CategoryQuestion categoryQuestion;
-	private int Duration;
+	private int duration;
 	private Account creator;
-	private LocalDate createDate;
+	private Date createDate;
 
 	public Exam(int id, String code, String title, CategoryQuestion categoryQuestion, int duration, Account creator,
-			LocalDate createDate) {
+			Date createDate) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.title = title;
 		this.categoryQuestion = categoryQuestion;
-		Duration = duration;
+		this.duration = duration;
 		this.creator = creator;
 		this.createDate = createDate;
 	}
@@ -56,11 +56,11 @@ public class Exam {
 	}
 
 	public int getDuration() {
-		return Duration;
+		return duration;
 	}
 
 	public void setDuration(int duration) {
-		Duration = duration;
+		this.duration = duration;
 	}
 
 	public Account getCreator() {
@@ -71,18 +71,18 @@ public class Exam {
 		this.creator = creator;
 	}
 
-	public LocalDate getCreateDate() {
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(LocalDate createDate) {
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
 	@Override
 	public String toString() {
 		return "Exam [id=" + id + ", code=" + code + ", title=" + title + ", categoryQuestion=" + categoryQuestion
-				+ ", Duration=" + Duration + ", creator=" + creator + ", createDate=" + createDate + "]";
+				+ ", duration=" + duration + ", creator=" + creator + ", createDate=" + createDate + "]";
 	}
 
 }

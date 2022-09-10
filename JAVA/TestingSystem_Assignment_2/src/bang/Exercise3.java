@@ -1,12 +1,15 @@
 package bang;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import bang.CategoryQuestion.CategoryName;
 import bang.Position.PositionName;
 import bang.TypeQuestion.TypeName;
 
-public class Program {
+public class Exercise3 {
 	public static void main(String[] args) {
 		Department dep1 = new Department(1, "Sale");
 		Department dep2 = new Department(2, "Giam doc");
@@ -31,7 +34,7 @@ public class Program {
 		GroupAccount groupAccount1 = new GroupAccount(group1, new Account[] { acc1, acc2 }, new Date());
 		GroupAccount groupAccount2 = new GroupAccount(group2, new Account[] { acc1, acc2, acc3 }, new Date());
 		GroupAccount groupAccount3 = new GroupAccount(group3, new Account[] { acc1, acc3 }, new Date());
-		GroupAccount groupAccount4 = new GroupAccount(group4, new Account[] { acc1, acc2, acc3, acc4 },new Date());
+		GroupAccount groupAccount4 = new GroupAccount(group4, new Account[] { acc1, acc2, acc3, acc4 }, new Date());
 
 		TypeQuestion typeQuestion1 = new TypeQuestion(1, TypeName.ESSAY);
 		TypeQuestion typeQuestion2 = new TypeQuestion(2, TypeName.MULTIPLE_CHOICE);
@@ -42,7 +45,7 @@ public class Program {
 		CategoryQuestion categoryQuestion4 = new CategoryQuestion(4, CategoryName.RUBY);
 		CategoryQuestion categoryQuestion5 = new CategoryQuestion(5, CategoryName.POSTMAN);
 
-		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4,new Date());
+		Question question1 = new Question(1, "Cau hoi ve Java", categoryQuestion1, typeQuestion2, acc4, new Date());
 		Question question2 = new Question(2, "Cau hoi ve PHP", categoryQuestion2, typeQuestion2, acc1, new Date());
 		Question question3 = new Question(3, "Cau hoi ve Ruby", categoryQuestion4, typeQuestion2, acc2, new Date());
 		Question question4 = new Question(4, "Cau hoi ve .Net", categoryQuestion2, typeQuestion2, acc3, new Date());
@@ -59,7 +62,7 @@ public class Program {
 
 		Exam exam1 = new Exam(1, "VTIQ001", "Đề thi C#", categoryQuestion1, 60, acc4, new Date());
 		Exam exam2 = new Exam(2, "VTIQ002", "Đề thi PHP", categoryQuestion2, 120, acc3, new Date());
-		Exam exam3 = new Exam(3, "VTIQ003", "Đề thi .Net", categoryQuestion3, 90, acc2, new Date());
+		Exam exam3 = new Exam(3, "VTIQ003", "Đề thi .Net", categoryQuestion3, 90, acc2, new Date(2022, 04, 15));
 		Exam exam4 = new Exam(4, "VTIQ004", "Đề thi Java", categoryQuestion5, 60, acc1, new Date());
 		Exam exam5 = new Exam(5, "VTIQ005", "Đề thi SQL", categoryQuestion4, 90, acc2, new Date());
 		Exam exam6 = new Exam(6, "VTIQ006", "Đề thi C#", categoryQuestion3, 120, acc1, new Date());
@@ -69,17 +72,60 @@ public class Program {
 		ExamQuestion examQuestion3 = new ExamQuestion(exam3, question3);
 		ExamQuestion examQuestion4 = new ExamQuestion(exam4, question1);
 
-		System.out.println("group4 có số Acc là: " + groupAccount4.account.length);
-		for (int i = 0; i < groupAccount4.account.length; i++) {
-			System.out.println("Thông tin các acc trong group4");
-			System.out.println("ID: " + groupAccount4.account[i].getId());
-			System.out.println("Email: " + groupAccount4.account[i].getEmail());
-			System.out.println("FullName: " + groupAccount4.account[i].getFullName());
-			System.out.println("Phòng ban: " + groupAccount4.account[i].getDepartment().getName());
-			System.out.println("Chức vụ: " + groupAccount4.account[i].getPosition().getName());
-			System.out.println("---------------");
+//		Question 1:
+//			In ra thông tin Exam thứ 1 và property create date sẽ được format theo định
+//			dạng vietnamese
+
+		System.out.println("----- Question 1 ---------");
+		Locale locale = new Locale("vn", "VN");
+		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
+		String date = dateFormat.format(exam1.getCreateDate());
+		System.out.println(date);
+
+		String dinhDang = "dd/MM/yyyy";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dinhDang);
+		String ngay = simpleDateFormat.format(exam1.getCreateDate());
+		System.out.println(ngay);
+
+//		Question 2:
+//			In ra thông tin: Exam đã tạo ngày nào theo định dạng
+//			Năm – tháng – ngày – giờ – phút – giây
+
+		Exam[] exams = { exam1, exam2, exam3, exam4, exam5, exam6 };
+
+		String dinhDang2 = "yyyy-MM-dd-HH-mm-ss";
+		SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat(dinhDang2);
+		for (int i = 0; i < exams.length; i++) {
+			System.out.println(exams[i].getCode() + " : " + simpleDateFormat2.format(exams[i].getCreateDate()));
 		}
-		System.out.println(groupAccount1.account.length);
+
+//		Question 3:
+//			Chỉ in ra năm của create date property trong Question 2
+		System.out.println("----- Question 3 --------");
+		String dinhDang3 = "yyyy";
+		SimpleDateFormat simpleDateFormat3 = new SimpleDateFormat(dinhDang3);
+		for (int i = 0; i < exams.length; i++) {
+			System.out.println(exams[i].getCode() + " : " + simpleDateFormat3.format(exams[i].getCreateDate()));
+		}
+
+//		Question 4:
+//			Chỉ in ra tháng và năm của create date property trong Question 2
+		System.out.println("----- Question 4 --------");
+		String dinhDang4 = "MM-yyyy";
+		SimpleDateFormat simpleDateFormat4 = new SimpleDateFormat(dinhDang4);
+		for (int i = 0; i < exams.length; i++) {
+			System.out.println(exams[i].getCode() + " : " + simpleDateFormat4.format(exams[i].getCreateDate()));
+		}
+
+//		Question 5:
+//			Chỉ in ra "MM-DD" của create date trong Question 2
+
+		System.out.println("----- Question 5 --------");
+		String dinhDang5 = "MM-dd";
+		SimpleDateFormat simpleDateFormat5 = new SimpleDateFormat(dinhDang5);
+		for (int i = 0; i < exams.length; i++) {
+			System.out.println(exams[i].getCode() + " : " + simpleDateFormat5.format(exams[i].getCreateDate()));
+		}
 
 	}
 }

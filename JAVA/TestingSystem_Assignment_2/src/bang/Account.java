@@ -1,6 +1,6 @@
 package bang;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Account {
 	private int id;
@@ -9,12 +9,12 @@ public class Account {
 	private String fullName;
 	private Department department;
 	private Position position;
-	private LocalDate createDate;
+	private Date createDate;
 	protected Group[] groups;
 
 	public Account(int id, String email, String userName, String fullName, Department department, Position position,
-			LocalDate createDate) {
-		super();
+			Date createDate) {
+	
 		this.id = id;
 		this.email = email;
 		this.userName = userName;
@@ -72,11 +72,11 @@ public class Account {
 		this.position = position;
 	}
 
-	public LocalDate getCreateDate() {
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(LocalDate createDate) {
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
@@ -85,5 +85,6 @@ public class Account {
 		return "Account [id=" + id + ", email=" + email + ", userName=" + userName + ", fullName=" + fullName
 				+ ", department=" + department + ", position=" + position + ", createDate=" + createDate + "]";
 	}
+	
 
 }

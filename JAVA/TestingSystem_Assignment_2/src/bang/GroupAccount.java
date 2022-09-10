@@ -1,14 +1,14 @@
 package bang;
 
-import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 
 public class GroupAccount {
 	private Group id;
 	protected Account[] account;
-	private LocalDate joinDate;
+	private Date joinDate;
 
-	public GroupAccount(Group id, Account[] account, LocalDate joinDate) {
+	public GroupAccount(Group id, Account[] account, Date joinDate) {
 		super();
 		this.id = id;
 		this.account = account;
@@ -31,11 +31,11 @@ public class GroupAccount {
 		this.account = account;
 	}
 
-	public LocalDate getJoinDate() {
+	public Date getJoinDate() {
 		return joinDate;
 	}
 
-	public void setJoinDate(LocalDate joinDate) {
+	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
 

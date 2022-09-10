@@ -1,6 +1,7 @@
 package bang;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Question {
 	private int id;
@@ -8,10 +9,10 @@ public class Question {
 	private CategoryQuestion categoryQuestion;
 	private TypeQuestion typeQuestion;
 	private Account creator;
-	private LocalDate createDate;
+	private Date createDate;
 
 	public Question(int id, String content, CategoryQuestion categoryQuestion, TypeQuestion typeQuestion,
-			Account creator, LocalDate createDate) {
+			Account creator, Date createDate) {
 		super();
 		this.id = id;
 		this.content = content;
@@ -61,11 +62,11 @@ public class Question {
 		this.creator = creator;
 	}
 
-	public LocalDate getCreateDate() {
+	public Date getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(LocalDate createDate) {
+	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
 
