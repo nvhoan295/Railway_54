@@ -11,6 +11,12 @@ public class Account {
 	private Position position;
 	private Date createDate;
 	protected Group[] groups;
+	
+	
+
+	public Account() {
+		
+	}
 
 	public Account(int id, String email, String userName, String fullName, Department department, Position position,
 			Date createDate) {
