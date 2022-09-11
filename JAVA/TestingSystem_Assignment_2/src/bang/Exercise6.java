@@ -21,7 +21,7 @@ public class Exercise6 {
 	public static void thongTinAccount(Account account) {
 //		Question 2:
 //			Tạo method để in thông tin các account
-		System.out.println("Thông tin Account: ");
+		System.out.println("Thông tin account: "+ account.getId());
 		System.out.println(account.toString());
 	}
 	public static void soNguyenDuongNhoHon10() {
@@ -93,7 +93,11 @@ public class Exercise6 {
 		ExamQuestion examQuestion3 = new ExamQuestion(exam3, question3);
 		ExamQuestion examQuestion4 = new ExamQuestion(exam4, question1);
 		
-
+//		Nhập các Mothos vào đây để chạy:
+		soChanNhoHon10();
+		soNguyenDuongNhoHon10();
+		thongTinAccount(acc1);
+		thongTinAccount(acc3);
 
 	}
 	
