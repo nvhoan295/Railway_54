@@ -1,4 +1,4 @@
-package com;
+package init;
 //Question 3:
 
 //Tạo constructor cho Group:

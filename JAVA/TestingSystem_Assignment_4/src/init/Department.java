@@ -1,4 +1,4 @@
-package com;
+package init;
 
 public class Department {
 	private int id;
