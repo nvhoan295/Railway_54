@@ -239,24 +239,69 @@ public class Exercise4 {
 //		cho trước.
 //		Ví dụ:
 //		"VTI Academy" chuyển ký tự 'e' sang '*' kết quả " VTI Acad*my"
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		String str;
+		char ch1, ch2;
+		System.out.println("Nhập chuỗi: ");
+		str = scanner.nextLine();
+		System.out.println("Nhập ký tự muốn chuyển: ");
+		ch1 = scanner.nextLine().toCharArray()[0];
+		System.out.println("Nhập ký tự sẽ chuyển: ");
+		ch2 = scanner.nextLine().toCharArray()[0];
+		scanner.close();
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) == ch1) {
+				str = str.replace(ch1, ch2);
+			}
+		}
+		System.out.println("Chuỗi sau khi chuyển: " + str);
+
+	}
+
+	public static void question15() {
+//		Question 15 (Optional): Revert string by word
+//		Đảo ngược các ký tự của chuỗi cách nhau bởi dấu cách mà không dùng
+//		thư viện.
+//		Ví dụ: " I am developer " => "developer am I".
+//		Các ký tự bên trong chỉ cách nhau đúng một dấu khoảng cách.
+//		Gợi ý: Các bạn cần loại bỏ dấu cách ở đầu và cuối câu, thao tác cắt
+//		chuỗi theo dấu cách
+		System.out.println("Nhập chuỗi: ");
+		String str = scanner.nextLine();
+		// chuyển hoá chuỗi
+		str = str.trim();
+		str = str.replaceAll("\\s", " ");
+		scanner.close();
+		System.out.println("Test: " + str);
+		String[] words = str.split(" ");
+
+		for (int i = words.length - 1; i >= 0; i--) {
+			System.out.print(words[i] + " ");
+		}
+
+	}
+
+	public static void question16() {
+//		Question 16 (Optional):
+//			Cho một chuỗi str và số nguyên n >= 0. Chia chuỗi str ra làm các phần
+//			bằng nhau với n ký tự. Nếu chuỗi không chia được thì xuất ra màn
+//			hình “KO”.
+		System.out.println("Nhập chuỗi: ");
+		String str = scanner.nextLine();
+		System.out.println("Nhập số nguyên n: ");
+		int n = scanner.nextInt();
+		scanner.close();
+		if (str == null || str.isEmpty() || str.length() % n != 0) {
+			System.out.println("Không");
+			return;
+		}
+		for (int i = 0; i < str.length(); i += n) {
+			System.out.println(str.substring(i, i + n));
+		}
+
 	}
 
 	public static void main(String[] args) {
-		question13();
+		question16();
 
 	}
 }
