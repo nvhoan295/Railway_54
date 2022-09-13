@@ -4,18 +4,43 @@ public class Department {
 	private int id;
 	private String name;
 
+	
 	public Department() {
-		
 	}
 
-	public Department(int id, String name) {
-		
+	public Department(String name) {
+
 		this.id = 0;
 		this.name = name;
 	}
 	
-	public static void question1() {
-		Department dep = new Department();
-		Department dep1 = new Department(0, "Dep1");
+	
+	
+	
+	
+	
+	
+	
+
+	public int getId() {
+		return id;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + "]";
+	}
+
 }

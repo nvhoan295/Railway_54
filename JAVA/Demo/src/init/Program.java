@@ -1,7 +1,10 @@
 package init;
 
-public class Exercise1 {
+import java.util.Scanner;
+
+public class Program {
+
 	public static void main(String[] args) {
-		Department.question1();
+
 	}
 }

@@ -1,5 +1,6 @@
 package com.vti.entity;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Account {
@@ -7,42 +8,50 @@ public class Account {
 	private String email;
 	private String userName;
 	private String fullName;
+	private Department department;
 	private Position position;
-	protected Date createDate;
+	private Date createDate;
+	protected Group[] groups;
+	
+	
 
-// Câu a
 	public Account() {
+		
 	}
-
-// Câu b
-	public Account(int id, String email, String userName, String fullName) {
-
+	
+	public Account(int id, String email, String userName, String firstName,
+	String lastName) {
 		this.id = id;
 		this.email = email;
 		this.userName = userName;
-		this.fullName = fullName;
+		this.fullName = firstName + " " + lastName;
 	}
+	
 
-// Câu c
-	public Account(int id, String email, String userName, String fullName, Position position) {
-		super();
+	public Account(int id, String email, String userName, String firstName, String lastName, Position position) {
 		this.id = id;
 		this.email = email;
 		this.userName = userName;
-		this.fullName = fullName;
+		this.fullName = firstName + " " + lastName;
 		this.position = position;
 		this.createDate = new Date();
 	}
 
-	public Account(int id, String email, String userName, String fullName, Position position, Date createDate) {
+	public Account(int id, String email, String userName, String firstName, String lastName, Position position, Date createDate) {
+	
 		this.id = id;
 		this.email = email;
 		this.userName = userName;
-		this.fullName = fullName;
+		this.fullName = firstName + " " + lastName;
 		this.position = position;
 		this.createDate = createDate;
 	}
+	
+	public Account(String fullName) {
+		this.fullName = fullName;
+	}
 
+	
 	public int getId() {
 		return id;
 	}
@@ -75,6 +84,14 @@ public class Account {
 		this.fullName = fullName;
 	}
 
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
 	public Position getPosition() {
 		return position;
 	}
@@ -91,5 +108,14 @@ public class Account {
 		this.createDate = createDate;
 	}
 
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", email=" + email + ", userName=" + userName + ", fullName=" + fullName
+				+ ", department=" + department + ", position=" + position + ", createDate=" + createDate + ", groups="
+				+ Arrays.toString(groups) + "]";
+	}
+
 	
+	
+
 }

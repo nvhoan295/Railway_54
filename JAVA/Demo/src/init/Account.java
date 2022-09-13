@@ -7,6 +7,10 @@ public class Account {
 	private String name;
 	private Date createDate;
 
+	
+	public Account() {
+	}
+
 	public Account(int id, String name, Date createDate) {
 		super();
 		this.id = id;

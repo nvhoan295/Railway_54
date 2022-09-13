@@ -1,46 +1,46 @@
 package com.vti.entity;
-//Question 3:
 
-//Tạo constructor cho Group:
-//a) không có parameters
-//b) Có các parameter là GroupName, Creator, array Account[]
-//accounts, CreateDate
-//c) Có các parameter là GroupName, Creator, array String[]
-//usernames , CreateDate
-//Với mỗi username thì sẽ khởi tạo 1 Account (chỉ có thông tin
-//username, các thông tin còn lại = null).
-//Khởi tạo 1 Object với mỗi constructor ở trên
-
+import java.util.Arrays;
 import java.util.Date;
 
 public class Group {
+	private int id;
 	private String name;
-	private Account Creator;
+	private Account creator;
 	private Account[] accounts;
 	private Date createDate;
-	protected String[] userName;
 
-// Câu a
 	public Group() {
 	}
-
-// Câu b
-
+	
 	public Group(String name, Account creator, Account[] accounts, Date createDate) {
-
 		this.name = name;
-		Creator = creator;
+		this.creator = creator;
 		this.accounts = accounts;
 		this.createDate = createDate;
 	}
-
-// Câu c
-	public Group(String name, Account creator, Date createDate, String[] userName) {
-
+	
+	
+	public Group(int id, String name, Account creator, String[] userNames, Date createDate) {
+		super();
+		this.id = id;
 		this.name = name;
-		Creator = creator;
+		this.creator = creator;
+		
+		Account[] accounts = new Account[userNames.length];
+		for (int i = 0; i < userNames.length; i++) {
+			accounts[i] = new Account(userNames[i]);
+		}
+		
 		this.createDate = createDate;
-		this.userName = userName;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -52,19 +52,11 @@ public class Group {
 	}
 
 	public Account getCreator() {
-		return Creator;
+		return creator;
 	}
 
 	public void setCreator(Account creator) {
-		Creator = creator;
-	}
-
-	public Account[] getAccounts() {
-		return accounts;
-	}
-
-	public void setAccounts(Account[] accounts) {
-		this.accounts = accounts;
+		this.creator = creator;
 	}
 
 	public Date getCreateDate() {
@@ -75,13 +67,12 @@ public class Group {
 		this.createDate = createDate;
 	}
 
-	public String[] getUserName() {
-		return userName;
+	@Override
+	public String toString() {
+		return "Group [id=" + id + ", name=" + name + ", creator=" + creator + ", accounts=" + Arrays.toString(accounts)
+				+ ", createDate=" + createDate + "]";
 	}
 
-	public void setUserName(String[] userName) {
-		this.userName = userName;
-	}
 	
 
 }
