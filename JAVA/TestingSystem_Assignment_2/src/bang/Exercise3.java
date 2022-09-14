@@ -126,6 +126,8 @@ public class Exercise3 {
 		for (int i = 0; i < exams.length; i++) {
 			System.out.println(exams[i].getCode() + " : " + simpleDateFormat5.format(exams[i].getCreateDate()));
 		}
-
+		System.out.println("vidu");
+		Date date2 = new Date(12/4/2022);
+		System.out.println(date2.toString());
 	}
 }
