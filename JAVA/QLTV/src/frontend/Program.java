@@ -15,7 +15,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		while (true) {
-			System.out.println("----- MENU -------");
+			System.out.println("------------- MENU -------------");
 			System.out.println("1. Thêm mới tài liêu: Sách, tạp chí, báo.\n" + "2. Xoá tài liệu theo mã tài liệu.\n"
 					+ "3. Hiện thị thông tin về tài liệu.\n" + "4. Tìm kiếm tài liệu theo loại: Sách, tạp chí, báo.\n"
 					+ "5. Thoát khỏi chương trình.");
@@ -50,7 +50,7 @@ public class Program {
 	}
 
 	public static void addTaiLieu() {
-		System.out.println("add");
+		System.out.println("Thêm mới tài liêu: Sách, tạp chí, báo.");
 		TaiLieu taiLieu = new TaiLieu();
 		System.out.println("Bạn muốn thêm (1. Sách, 2. Tạp chí, 3. Báo");
 		int choose = scanner.nextInt();
@@ -73,7 +73,10 @@ public class Program {
 	}
 
 	public static void delTaiLieu() {
-		System.out.println("Xoá");
+		System.out.println("Xoá tài liệu theo mã tài liệu");
+		System.out.println("Nhập Id tài liệu muốn xoá: ");
+		String idXoa = scanner.next();
+		taiLieus.removeIf(t -> t.getId().equals(idXoa));
 	}
 
 	public static void thongTin() {
@@ -85,6 +88,7 @@ public class Program {
 	}
 
 	public static void findTaiLieu() {
-		System.out.println("Tìm kiếm");
+		System.out.println("Tìm kiếm tài liệu theo loại: Sách, tạp chí, báo.");
+		
 	}
 }

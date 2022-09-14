@@ -29,6 +29,14 @@ public class Bao extends TaiLieu{
 		date = new Date();
 				
 	}
+
+	@Override
+	public String toString() {
+		return "Bao [date=" + date + ", getId()=" + getId() + ", getTenNXB()=" + getTenNXB() + ", getSoLuong()="
+				+ getSoLuong() + "]";
+	}
+	
+	
 	
 	
 }
