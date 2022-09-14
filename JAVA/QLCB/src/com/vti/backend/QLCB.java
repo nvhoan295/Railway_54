@@ -21,39 +21,37 @@ public class QLCB {
 		canBos.add(congNhan);
 		canBos.add(nhanVien);
 		canBos.add(kySu);
-		
-		System.out.println("------- Menu -------");
-		System.out.println("1. Thêm mới cán bộ.\n" + "2. Tìm kiếm theo họ tên.\n"
-				+ "3. Hiện thị thông tin về danh sách các cán bộ.\n"
-				+ "4. Nhập vào tên của cán bộ và delete cán bộ đó\n" + "5. Thoát khỏi chương trình.");
-		System.out.println("Mời bạn nhập: ");
-		int nhap = scanner.nextInt();
-		switch (nhap) {
-		case 1:
-			addCanBo();
-			System.out.println("Số thành viên của là: "+canBos.size());
-			break;
-		case 2:
-			findCanBo();
-			
-			break;
-		case 3:
-			inforCanBo();
-			for (CanBo canBo : canBos) {
-				System.out.println(canBos.size());
-				canBo.getInfor();
+		while (true) {
+			System.out.println("------- Menu -------");
+			System.out.println("1. Thêm mới cán bộ.\n" + "2. Tìm kiếm theo họ tên.\n"
+					+ "3. Hiện thị thông tin về danh sách các cán bộ.\n"
+					+ "4. Nhập vào tên của cán bộ và delete cán bộ đó\n" + "5. Thoát khỏi chương trình.");
+			System.out.println("Mời bạn nhập: ");
+			int nhap = scanner.nextInt();
+			switch (nhap) {
+			case 1:
+				addCanBo();
+				System.out.println("Số thành viên của là: " + canBos.size());
+				for (CanBo canBo : canBos) {
+					System.out.println(canBo);
+				}
+				break;
+			case 2:
+				findCanBo();
+				break;
+			case 3:
+				inforCanBo();
+				break;
+			case 4:
+				deleteCanBo();
+				break;
+			case 5:
+				System.out.println("Thoát.. Chào tạm biệt !!!!");
+				return;
+			default:
+				System.out.println("Nhập Sai! Thoát.");
+				break;
 			}
-			break;
-		case 4:
-			deleteCanBo();
-			for (CanBo canBo : canBos) {
-				System.out.println(canBos.size());
-				canBo.getInfor();
-			}
-			break;
-		default:
-			System.out.println("Nhập Sai! Thoát.");
-			return;
 		}
 
 	}
@@ -79,7 +77,6 @@ public class QLCB {
 		}
 		canBo.input();
 		canBos.add(canBo);
-		scanner.close();
 	}
 
 	public static void findCanBo() {
@@ -91,14 +88,17 @@ public class QLCB {
 				System.out.println(canBo);
 			}
 		}
-		
+
 		scanner.close();
 
 	}
 
 	// c, Hiện thị thông tin về danh sách các cán bộ
 	public static void inforCanBo() {
-		
+		System.out.println("Thông tin danh sách Cán Bộ: ");
+		for (CanBo canBo : canBos) {
+			canBo.getInfor();
+		}
 	}
 
 //		d, Nhập vào tên của cán bộ và delete cán bộ đó
@@ -106,12 +106,7 @@ public class QLCB {
 		System.out.println("Xoá cán bộ ");
 		System.out.println("Nhập tên: ");
 		String hoTen = scanner.next();
-		for (int i = 0; i < canBos.size(); i++) {
-			canBos.remove(hoTen);
-		for (CanBo canBo : canBos) {
-			canBo.getInfor();
-		}
-		}
+		canBos.removeIf(t -> t.getHoTen().equals(hoTen));
 	}
 
 }

@@ -81,6 +81,7 @@ public class CanBo {
 	}
 
 	public void getInfor() {
+		System.out.println("-------------------");
 		System.out.println("Họ Tên   		: " + hoTen);
 		System.out.println("Tuổi			: " + tuoi);
 		System.out.println("Giới Tính		: " + gioiTinh);

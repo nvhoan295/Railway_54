@@ -31,7 +31,7 @@ public class CongNhan extends CanBo {
 	@Override
 	public void getInfor() {
 		super.getInfor();
-		System.out.println("Bậc 			: " + bac);
+		System.out.println("Bậc 				: " + bac);
 	}
 
 }
