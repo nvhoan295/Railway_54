@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.vti.entity.exercise5Inheritance.question1_2.CanBo;
-import com.vti.entity.exercise5Inheritance.question1_2.CongNhan;
-import com.vti.entity.exercise5Inheritance.question1_2.KySu;
-import com.vti.entity.exercise5Inheritance.question1_2.NhanVien;
+import com.vti.entity.exercise5Inheritance.QLCB.CanBo;
+import com.vti.entity.exercise5Inheritance.QLCB.CongNhan;
+import com.vti.entity.exercise5Inheritance.QLCB.KySu;
+import com.vti.entity.exercise5Inheritance.QLCB.NhanVien;
 
 public class QuanLyCanBo {
 //	Question 2: Tiếp tục Question 1

@@ -28,7 +28,7 @@ public class NhanVien extends CanBo {
 	@Override
 	public void getInfor() {
 		super.getInfor();
-		System.out.println("Công việc : " + congViec);
+		System.out.println("Công việc		 : " + congViec);
 	}
 
 }

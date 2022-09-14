@@ -1,4 +1,4 @@
-package com.vti.entity;
+package com.vti.entity.exercise5Inheritance.QLCB;
 
 import java.util.Scanner;
 
@@ -31,7 +31,7 @@ public class CongNhan extends CanBo {
 	@Override
 	public void getInfor() {
 		super.getInfor();
-		System.out.println("Bậc 			: " + bac);
+		System.out.println("Bậc 				: " + bac);
 	}
 
 }

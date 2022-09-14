@@ -1,4 +1,4 @@
-package com.vti.entity;
+package com.vti.entity.exercise5Inheritance.QLCB;
 
 import java.util.Scanner;
 
@@ -32,7 +32,7 @@ public class KySu extends CanBo{
 	@Override
 	public void getInfor() {
 		super.getInfor();
-		System.out.println("Ngành Đào Tạo		  : "+ nganhDaoTao);
+		System.out.println("Ngành Đào Tạo  : "+ nganhDaoTao);
 	}
 
 	
