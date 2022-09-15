@@ -12,12 +12,15 @@ public class QLCB {
 	static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		// Thêm dữ liệu
 		CongNhan congNhan = new CongNhan("Hoan", 23, GioiTinh.NAM, "HaNoi", 6);
 		KySu kySu = new KySu("Long", 25, GioiTinh.NAM, "BacNinh", "CNTT");
 		NhanVien nhanVien = new NhanVien("Mai", 24, GioiTinh.NỮ, "HungYen", "KeToan");
 		canBos.add(congNhan);
 		canBos.add(nhanVien);
 		canBos.add(kySu);
+		
+		
 		while (true) {
 			System.out.println("------- Menu -------");
 			System.out.println("1. Thêm mới cán bộ.\n" + "2. Tìm kiếm theo họ tên.\n"
