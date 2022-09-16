@@ -65,7 +65,7 @@ public class ThiSinh {
 		System.out.println("Nhập Địa chỉ: ");
 		diaChi = scanner.next();
 	
-		System.out.println("Nhập Khối Thi (1. A, 2. B, 3. B)");
+		System.out.println("Nhập Khối Thi (1. A, 2. B, 3. C)");
 		int n = scanner.nextInt();
 		switch (n) {
 		case 1:
