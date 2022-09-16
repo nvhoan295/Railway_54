@@ -10,9 +10,6 @@ public class MyNewsBackend {
 	public static void question1() {
 		Scanner scanner = new Scanner(System.in);
 		List<News> lists = new ArrayList<>();
-		News new1 = new News();
-		new1.setTitle("Bầu cử");
-		lists.add(new1);
 
 		while (true) {
 			System.out.println("------- MENU ---------");
@@ -35,7 +32,7 @@ public class MyNewsBackend {
 				}
 				break;
 			case 3:
-				new News().calculate();
+				news.calculate();
 				break;
 			case 4:
 				System.out.println("Thoát ");

@@ -1,7 +1,5 @@
 package com.vti.entity.exercise2.ques3;
 
-import java.util.Iterator;
-
 public class Test {
 	public static void main(String[] args) {
 		HinhChuNhat[] hinhs = new HinhChuNhat[4];
