@@ -1,22 +1,23 @@
-package com.vti.frontend;
+package com.vti.backend;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import com.vti.entity.exercise5Inheritance.QLTV.*;
 
-public class QLTV {
-	static List<TaiLieu> taiLieus = new ArrayList<>();
-	static Scanner scanner = new Scanner(System.in);
+public class BackenQLTV {
 
-	public static void main(String[] args) {
+	private Scanner scanner;
+	private List<TaiLieu> taiLieus;
+
+	public BackenQLTV() {
+		this.scanner = new Scanner(System.in);
+		this.taiLieus = new ArrayList<>();
+	}
+
+	public void quanlyThuVien() {
 		while (true) {
-			System.out.println("------------- MENU -------------");
-			System.out.println("1. Thêm mới tài liêu: Sách, tạp chí, báo.\n" + "2. Xoá tài liệu theo mã tài liệu.\n"
-					+ "3. Hiện thị thông tin về tài liệu.\n" + "4. Tìm kiếm tài liệu theo loại: Sách, tạp chí, báo.\n"
-					+ "5. Thoát khỏi chương trình.");
-
-			System.out.print("Nhập: ");
+			System.out.print("Nhập theo MENU: ");
 			int choose = scanner.nextInt();
 			switch (choose) {
 			case 1:
@@ -45,7 +46,7 @@ public class QLTV {
 
 	}
 
-	public static void addTaiLieu() {
+	public void addTaiLieu() {
 		System.out.println("Thêm mới tài liêu: Sách, tạp chí, báo.");
 		TaiLieu taiLieu = new TaiLieu();
 		System.out.println("Bạn muốn thêm (1. Sách, 2. Tạp chí, 3. Báo");
@@ -68,14 +69,14 @@ public class QLTV {
 
 	}
 
-	public static void delTaiLieu() {
+	public void delTaiLieu() {
 		System.out.println("Xoá tài liệu theo mã tài liệu");
 		System.out.println("Nhập Id tài liệu muốn xoá: ");
 		String idXoa = scanner.next();
 		taiLieus.removeIf(t -> t.getId().equals(idXoa));
 	}
 
-	public static void thongTin() {
+	public void thongTin() {
 		System.out.println("Hiện thị thông tin về tài liệu");
 		for (TaiLieu taiLieu : taiLieus) {
 			System.out.println(taiLieu);
@@ -83,8 +84,8 @@ public class QLTV {
 
 	}
 
-	public static void findTaiLieu() {
+	public void findTaiLieu() {
 		System.out.println("Tìm kiếm tài liệu theo loại: Sách, tạp chí, báo.");
-		
+
 	}
 }

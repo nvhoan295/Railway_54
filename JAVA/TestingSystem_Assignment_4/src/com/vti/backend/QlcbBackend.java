@@ -1,4 +1,4 @@
-package com.vti.frontend;
+package com.vti.backend;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +7,17 @@ import java.util.Scanner;
 import com.vti.entity.exercise5Inheritance.QLCB.*;
 import com.vti.entity.exercise5Inheritance.QLCB.CanBo.GioiTinh;
 
-public class QLCB {
-	static List<CanBo> canBos = new ArrayList<>();
-	static Scanner scanner = new Scanner(System.in);
+public class QlcbBackend {
 
-	public static void main(String[] args) {
+	private Scanner scanner;
+	private List<CanBo> canBos;
+	
+	public QlcbBackend() {
+		this.scanner = new Scanner(System.in);
+		this.canBos = new ArrayList<>();
+	}
+
+	public void quanLyCanBo() {
 		// Thêm dữ liệu
 		CongNhan congNhan = new CongNhan("Hoan", 23, GioiTinh.NAM, "HaNoi", 6);
 		KySu kySu = new KySu("Long", 25, GioiTinh.NAM, "BacNinh", "CNTT");
@@ -20,13 +26,8 @@ public class QLCB {
 		canBos.add(nhanVien);
 		canBos.add(kySu);
 		
-		
 		while (true) {
-			System.out.println("------- Menu -------");
-			System.out.println("1. Thêm mới cán bộ.\n" + "2. Tìm kiếm theo họ tên.\n"
-					+ "3. Hiện thị thông tin về danh sách các cán bộ.\n"
-					+ "4. Nhập vào tên của cán bộ và delete cán bộ đó\n" + "5. Thoát khỏi chương trình.");
-			System.out.println("Mời bạn nhập: ");
+			System.out.println("Mời bạn nhập theo MENU: ");
 			int nhap = scanner.nextInt();
 			switch (nhap) {
 			case 1:
@@ -53,11 +54,11 @@ public class QLCB {
 				break;
 			}
 		}
-
 	}
 
+
 	// a. Them mới cán bộ
-	public static void addCanBo() {
+	public void addCanBo() {
 		CanBo canBo = new CanBo();
 		System.out.println("Bạn muốn thêm cán bộ ( 1. Công nhân, 2. Kỹ sư, 3. Nhân Viên");
 		int choose = scanner.nextInt();
@@ -79,7 +80,7 @@ public class QLCB {
 		canBos.add(canBo);
 	}
 
-	public static void findCanBo() {
+	public void findCanBo() {
 		System.out.println("Tìm kiếm theo tên");
 		System.out.println("Nhập tên: ");
 		String tenCanTim = scanner.next();
@@ -89,12 +90,11 @@ public class QLCB {
 			}
 		}
 
-		scanner.close();
 
 	}
 
 	// c, Hiện thị thông tin về danh sách các cán bộ
-	public static void inforCanBo() {
+	public void inforCanBo() {
 		System.out.println("Thông tin danh sách Cán Bộ: ");
 		for (CanBo canBo : canBos) {
 			canBo.getInfor();
@@ -102,7 +102,7 @@ public class QLCB {
 	}
 
 //		d, Nhập vào tên của cán bộ và delete cán bộ đó
-	public static void deleteCanBo() {
+	public void deleteCanBo() {
 		System.out.println("Xoá cán bộ ");
 		System.out.println("Nhập tên: ");
 		String hoTen = scanner.next();
