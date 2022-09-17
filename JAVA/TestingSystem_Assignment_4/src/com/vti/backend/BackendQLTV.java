@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 import com.vti.entity.exercise5Inheritance.QLTV.*;
 
-public class BackenQLTV {
+public class BackendQLTV {
 
 	private Scanner scanner;
 	private List<TaiLieu> taiLieus;
 
-	public BackenQLTV() {
+	public BackendQLTV() {
 		this.scanner = new Scanner(System.in);
 		this.taiLieus = new ArrayList<>();
 	}
