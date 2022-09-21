@@ -9,8 +9,7 @@ import com.vti.entity.exercise1.News;
 public class MyNews {
 
 	public static void main(String[] args) {
-		MyNewsBackend myNews = new MyNewsBackend();
-		myNews.question1();
+		MyNewsBackend.question1();
 	}
 
 }
