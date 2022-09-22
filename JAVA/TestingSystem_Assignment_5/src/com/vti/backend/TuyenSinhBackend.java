@@ -17,8 +17,7 @@ public class TuyenSinhBackend implements ITuyenSinh{
 		thiSinhs = new ArrayList<>();
 		scanner = new Scanner(System.in);
 	}
-//	static Scanner scanner = new Scanner(System.in);
-//	static List<ThiSinh> thiSinhs = new ArrayList<>();
+
 	public void question2() {
 		while (true) {
 			System.out.println("Nhập theo MENU: ");
