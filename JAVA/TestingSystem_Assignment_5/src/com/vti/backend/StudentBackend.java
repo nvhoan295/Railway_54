@@ -1,5 +1,7 @@
 package com.vti.backend;
 
+import java.util.Scanner;
+
 import com.vti.entity.exercise2.*;
 
 public class StudentBackend {
@@ -17,14 +19,33 @@ public class StudentBackend {
 		students[7] = new Student(8, "Nguyễn Văn H", 3);
 		students[8] = new Student(9, "Nguyễn Văn K", 2);
 		students[9] = new Student(10, "Nguyễn Văn S", 2);
-		
-		
-		
-		
-		
-		
-		
 
+		while (true) {
+			System.out.println("------ MENU ---------");
+			System.out.println("1) Kêu gọi cả lớp điểm danh.\n" + "2) Gọi nhóm 1 đi học bài\n"
+					+ "3) Gọi nhóm 2 đi dọn vệ sinh\n" + "4) Thoát");
+			System.out.println("Chọn chức năng: ");
+			Scanner scanner = new Scanner(System.in);
+			int choose = scanner.nextInt();
+			switch (choose) {
+			case 1:
+				StudentBackend.diemDanh();
+				break;
+			case 2:
+				StudentBackend.hocBai();
+				break;
+			case 3:
+				StudentBackend.donVeSinh();
+				break;
+			case 4:
+				System.err.println("Thoát");
+				return;
+			default:
+				System.err.println("Nhập lại");
+				break;
+			}
+
+		}
 	}
 
 	public static void diemDanh() {
