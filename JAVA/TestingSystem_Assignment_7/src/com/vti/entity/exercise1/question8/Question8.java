@@ -10,19 +10,19 @@ public class Question8 {
 		for (int i = 0; i < hinhChuNhats.length; i++) {
 			System.out.println("Hình " + (i + 1));
 			System.out.println("Cạnh a: ");
-			Float a = ScannerUtils.inputFloat("Nhập kiểu float");
+			Float a = ScannerUtils.inputFloat();
 			System.out.println("Cạnh b: ");
-			Float b = ScannerUtils.inputFloat("NHập kiểu float");
+			Float b = ScannerUtils.inputFloat();
 			HinhChuNhat hcn = new HinhChuNhat(a, b);
 			hinhChuNhats[i] = hcn;
 		}
 
 		System.out.println("Tạo hình tròn số 1, nhập bán kính: ");
-		float r1 = ScannerUtils.inputFloat("Nhập kiểu float");
+		float r1 = ScannerUtils.inputFloat();
 		HinhTron hinhTron1 = new HinhTron(r1, r1);
 
 		System.out.println("Tạo hình tròn số 2, nhập bán kính: ");
-		float r2 = ScannerUtils.inputFloat("Nhập kiểu float");
+		float r2 = ScannerUtils.inputFloat();
 		HinhTron hinhTron2 = new HinhTron(r2, r2);
 
 	}

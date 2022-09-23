@@ -1,0 +1,9 @@
+Student 1
+	ID: 1
+	Họ và tên: Hoàn
+Student 2
+	ID: 2
+	Họ và tên: Lisa
+Student 3
+	ID: 3
+	Họ và tên: Thảo

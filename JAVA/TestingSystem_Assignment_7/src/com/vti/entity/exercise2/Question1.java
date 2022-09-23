@@ -5,7 +5,7 @@ import com.vti.Utils.ScannerUtils;
 public class Question1 {
 	public static void main(String[] args) {
 		System.out.println("Nhập a: ");
-		int a = ScannerUtils.inputInt("Nhập kiểu int");
+		int a = ScannerUtils.inputInt();
 		System.out.println("Tổng của Pi và a là: " + MyMath.sum(a));
 
 	}
