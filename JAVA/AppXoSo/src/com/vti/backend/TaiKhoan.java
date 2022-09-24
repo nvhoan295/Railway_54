@@ -1,40 +1,59 @@
 package com.vti.backend;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 import com.vti.Utils.FileManager;
 import com.vti.Utils.IOManager;
-import com.vti.entity.*;
+import com.vti.entity.User;
 
 public class TaiKhoan {
-	public static void main(String[] args) {
-		TaiKhoan.ThongTinTaiKhoan();
+	public static void main(String[] args) throws Exception {
+		arrUser();
+//		ThongTinTaiKhoan();
+		docFile();
 	}
 
-	public static void arrUser() {
-		List<User> users = new ArrayList<>();
-		// Tạo User
+	public static void arrUser() throws Exception {
+
 		User user = new User();
 		System.out.println("------- Tạo Tài Khoản -------- ");
 		user.input();
-		users.add(user);
-		// Ghi object User vào file
 
+		// Ghi dữ liệu vào file
 		try {
-			IOManager.writeObject(users, "/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/User.ser");
+			FileManager.createNewFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt");
 		} catch (Exception e) {
-			e.getMessage();
+			
 		}
 
+		IOManager.writeFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt","UserName: " + user.getUserName()+ "\n", true);
+		IOManager.writeFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt","PassWord: " + user.getPassword("abc")+ "\n" , true);
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
-	public static void ThongTinTaiKhoan() {
+	public static void ThongTinTaiKhoanobj() throws Exception {
 		// Đọc file object
-				try {
-					IOManager.readObject("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/User.ser");
-				} catch (Exception e) {
-					e.getMessage();
-				}
+
+		FileInputStream fileInputStream = new FileInputStream(
+				"/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/User.ser");
+		ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+		Object object = objectInputStream.readObject();
+		User user = (User) object;
+		System.out.println(user.getUserName());
+		System.out.println(user.getPassword("acb"));
+
 	}
+	public static void docFile() throws Exception {
+		IOManager.readFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt");
+	}
+
 }

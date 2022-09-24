@@ -91,27 +91,23 @@ public class IOManager {
 			objectOutputStream.close();
 		}
 	}
-	public static Object readObject(Object object, String pathFile) throws Exception {
+	// ArrObj
+	public static void writeObject(Object[] object, String pathFile) throws Exception {
 
-		// Check file exists
-		if (!FileManager.isFileExists(pathFile)) {
-			throw new Exception("File Không tồn tại");
-		}
-
-		// Read File
-		FileInputStream fileInputStream = null;
-		ObjectInputStream objectInputStream = null;
+		// Write file
+		FileOutputStream fileOutputStream = null;
+		ObjectOutputStream objectOutputStream = null;
 
 		try {
-			fileInputStream = new FileInputStream(pathFile);
-			objectInputStream = new ObjectInputStream(fileInputStream);
-			object =  objectInputStream.readObject();
-			return object;
+			fileOutputStream = new FileOutputStream(pathFile);
+			objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+			objectOutputStream.writeObject(object);
 
 		} finally {
-			// close file
-			fileInputStream.close();
-			objectInputStream.close();
+			// Close file
+			fileOutputStream.close();
+			objectOutputStream.close();
 		}
 	}
 }
