@@ -5,6 +5,6 @@ import com.vti.backend.XoSo;
 
 public class Program {
 	public static void main(String[] args) {
-		
+		XoSo.Menufull();
 	}
 }

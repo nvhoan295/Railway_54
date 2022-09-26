@@ -1,59 +1,47 @@
 package com.vti.backend;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
-import com.vti.Utils.FileManager;
-import com.vti.Utils.IOManager;
-import com.vti.entity.User;
+import com.vti.Utils.ScannerUtils;
+import com.vti.entity.Account;
 
 public class TaiKhoan {
-	public static void main(String[] args) throws Exception {
-		arrUser();
-//		ThongTinTaiKhoan();
-		docFile();
+	static ArrayList<Account> accounts = new ArrayList<>();
+
+	public static void main(String[] args) {
+		signIn();
 	}
 
-	public static void arrUser() throws Exception {
+	public static void accCoSan() {
+		accounts.add(new Account("hoan", "123456"));
+		accounts.add(new Account("thao", "123456"));
+		accounts.add(new Account("thang", "123456"));
+		accounts.add(new Account("nam", "123456"));
+		accounts.add(new Account("dat", "123456"));
+	}
+	
+	public static void signIn() {
+		accCoSan();
+		System.out.println("---- Signin ----");
+		System.out.println("Nhập userName: ");
+		String userName = ScannerUtils.inputString();
+		System.out.println("Nhập password: ");
+		String passWord = ScannerUtils.inputString();
 
-		User user = new User();
-		System.out.println("------- Tạo Tài Khoản -------- ");
-		user.input();
-
-		// Ghi dữ liệu vào file
+		
 		try {
-			FileManager.createNewFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt");
-		} catch (Exception e) {
-			
+			for (Account account : accounts) {
+				if (account.getUserName().equals(userName) && account.getPassword("abc").equals(passWord)) {
+					System.out.println("--- Đăng nhập thành công ----");
+					
+					XoSo.Menufull();
+				}
+			}
+		} finally {
+			System.out.println("Sai rồi");
 		}
-
-		IOManager.writeFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt","UserName: " + user.getUserName()+ "\n", true);
-		IOManager.writeFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt","PassWord: " + user.getPassword("abc")+ "\n" , true);
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
-
-	public static void ThongTinTaiKhoanobj() throws Exception {
-		// Đọc file object
-
-		FileInputStream fileInputStream = new FileInputStream(
-				"/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/User.ser");
-		ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-		Object object = objectInputStream.readObject();
-		User user = (User) object;
-		System.out.println(user.getUserName());
-		System.out.println(user.getPassword("acb"));
-
-	}
-	public static void docFile() throws Exception {
-		IOManager.readFile("/Users/nguyenhoan/Desktop/Railway_54/JAVA/AppXoSo/src/com/vti/File/taikhoan.txt");
-	}
-
+	
+	
+	
 }

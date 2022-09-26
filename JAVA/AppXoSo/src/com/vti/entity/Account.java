@@ -1,16 +1,25 @@
 package com.vti.entity;
 
 import java.io.Serializable;
+import java.util.concurrent.CountDownLatch;
 
 import com.vti.Utils.ScannerUtils;
 
-public class User implements Serializable{
+public class Account implements Serializable {
 	private String userName;
 	private String passWord;
 	private double soDu;
-	
-	
-	
+	public static int count;
+
+	public Account() {
+	}
+
+	public Account(String userName, String passWord) {
+		count++;
+		this.userName = userName;
+		this.passWord = passWord;
+		this.soDu = 0;
+	}
 
 	public void input() {
 		System.out.print("Nhập userName: ");
@@ -60,9 +69,5 @@ public class User implements Serializable{
 	public String toString() {
 		return "User [userName=" + userName + ", passWord=" + passWord + ", soDu=" + soDu + "]";
 	}
-
-	
-	
-	
 
 }

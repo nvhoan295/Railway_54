@@ -126,42 +126,33 @@ public class XoSo {
 
 		System.out.printf("Giải 2 %24S", String.format("%05d", giai2[0]));
 		System.out.printf("%30S%n", String.format("%05d", giai2[1]));
-		
-		
-		System.out.printf("Giải 3 %18S " , String.format("%05d", giai3[0]));
-		System.out.printf("%20S " , String.format("%05d", giai3[1]));
-		System.out.printf("%20S%n" , String.format("%05d", giai3[2]));
-		System.out.printf("%25S " , String.format("%05d", giai3[3]));
-		System.out.printf("%20S " , String.format("%05d", giai3[4]));
-		System.out.printf("%20S %n" , String.format("%05d", giai3[5]));
-		
-	
-		
-		System.out.printf("Giải 4 %26S" , String.format("%04d", giai4[0]));
-		System.out.printf("%24S %n" , String.format("%04d", giai4[1]));
-		System.out.printf("%33S" , String.format("%04d", giai4[1]));
-		System.out.printf("%24S %n" , String.format("%04d", giai4[1]));
-		
-		
-		
-		System.out.printf("Giải 5 %19S" , String.format("%04d", giai5[0]));
-		System.out.printf("%20S" , String.format("%04d", giai5[1]));
-		System.out.printf("%20S%n" , String.format("%04d", giai5[2]));
-		System.out.printf("%26S" , String.format("%04d", giai5[3]));
-		System.out.printf("%20S" , String.format("%04d", giai5[4]));
-		System.out.printf("%20S%n" , String.format("%04d", giai5[5]));
-		
-		
-		System.out.printf("Giải 6 %20S %20S %20S%n", String.format("%03d", giai6[0]),String.format("%03d", giai6[1]),String.format("%03d", giai6[2]));
-		
-		
-		System.out.printf("Giải 7 %14S" , String.format("%02d", giai7[0]));
-		System.out.printf("%16S" , String.format("%02d", giai7[1]));
-		System.out.printf("%16S" , String.format("%02d", giai7[2]));
-		System.out.printf("%16S%n" , String.format("%02d", giai7[3]));
-	
-		
-		
+
+		System.out.printf("Giải 3 %18S ", String.format("%05d", giai3[0]));
+		System.out.printf("%20S ", String.format("%05d", giai3[1]));
+		System.out.printf("%20S%n", String.format("%05d", giai3[2]));
+		System.out.printf("%25S ", String.format("%05d", giai3[3]));
+		System.out.printf("%20S ", String.format("%05d", giai3[4]));
+		System.out.printf("%20S %n", String.format("%05d", giai3[5]));
+
+		System.out.printf("Giải 4 %26S", String.format("%04d", giai4[0]));
+		System.out.printf("%24S %n", String.format("%04d", giai4[1]));
+		System.out.printf("%33S", String.format("%04d", giai4[1]));
+		System.out.printf("%24S %n", String.format("%04d", giai4[1]));
+
+		System.out.printf("Giải 5 %19S", String.format("%04d", giai5[0]));
+		System.out.printf("%20S", String.format("%04d", giai5[1]));
+		System.out.printf("%20S%n", String.format("%04d", giai5[2]));
+		System.out.printf("%26S", String.format("%04d", giai5[3]));
+		System.out.printf("%20S", String.format("%04d", giai5[4]));
+		System.out.printf("%20S%n", String.format("%04d", giai5[5]));
+
+		System.out.printf("Giải 6 %20S %20S %20S%n", String.format("%03d", giai6[0]), String.format("%03d", giai6[1]),
+				String.format("%03d", giai6[2]));
+
+		System.out.printf("Giải 7 %14S", String.format("%02d", giai7[0]));
+		System.out.printf("%16S", String.format("%02d", giai7[1]));
+		System.out.printf("%16S", String.format("%02d", giai7[2]));
+		System.out.printf("%16S%n", String.format("%02d", giai7[3]));
 
 	}
 
