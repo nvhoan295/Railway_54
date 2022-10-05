@@ -1,6 +1,7 @@
 package com.vti.entity.Exercise3;
 
 public class MyMap<K, V> {
+
 	private K key;
 	private V value;
 
@@ -25,5 +26,4 @@ public class MyMap<K, V> {
 		this.value = value;
 	}
 
-	
 }

@@ -1,19 +1,30 @@
-package com.vti.entity.exercise5;
+package com.vti.entity;
 
-import java.io.Serializable;
-
-public class Student implements Serializable {
+public class Student {
 	private int id;
 	private String name;
+	private static int count = 0;
 
-	public Student(int id, String name) {
-		this.id = id;
+	public Student(String name) {
+		++count;
+		this.id = count;
 		this.name = name;
 	}
-
+	
+	
+	/**
+	 * @deprecated replece by {@link #getId2()}
+	 * 
+	 */
+	@Deprecated
 	public int getId() {
 		return id;
 	}
+	
+	public String getId2() {
+		return "MSV "+ id;
+	}
+	
 
 	public String getName() {
 		return name;
@@ -31,5 +42,6 @@ public class Student implements Serializable {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + "]";
 	}
+	
 
 }

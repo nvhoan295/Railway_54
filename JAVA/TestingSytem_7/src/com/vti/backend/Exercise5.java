@@ -10,6 +10,7 @@ import java.util.List;
 import com.vti.Utils.*;
 
 public class Exercise5 {
+
 	public void question1() throws Exception {
 		// Xoá file nếu file đã tồn tại
 		try {
@@ -33,7 +34,7 @@ public class Exercise5 {
 			students.add(new Student(id, name));
 
 		}
-		
+
 		// Ghi file
 		for (int i = 0; i < students.size(); i++) {
 			// Ghi file
@@ -45,4 +46,36 @@ public class Exercise5 {
 		// Đọc File
 		IOManager.readFile("StudentInformation.txt");
 	}
+
+	public void ghiObject() {
+		List<Student> students = new ArrayList<>();
+		
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Nhập id: ");
+			int id = ScannerUtils.inputInt();
+			System.out.println("Nhập name: ");
+			String name = ScannerUtils.inputString();
+			students.add(new Student(id, name));
+		}
+
+		// tạo file
+		try {
+			FileManager.createNewFile("Student.txt");
+		} catch (Exception e) {
+
+		}
+		// ghi Object
+		try {
+			IOManager.writeObject(students, "Student.txt", true);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			IOManager.readObject("Student.txt");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 }

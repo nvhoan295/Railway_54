@@ -92,4 +92,23 @@ public class IOManager {
 		}
 	}
 
+	//
+	public static void writeObject(Object object, String pathFile, boolean isContinuing) throws Exception {
+
+		// Write file
+		FileOutputStream fileOutputStream = null;
+		ObjectOutputStream objectOutputStream = null;
+
+		try {
+			fileOutputStream = new FileOutputStream(pathFile, isContinuing);
+			objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+			objectOutputStream.writeObject(object);
+
+		} finally {
+			// Close file
+			fileOutputStream.close();
+			objectOutputStream.close();
+		}
+	}
 }

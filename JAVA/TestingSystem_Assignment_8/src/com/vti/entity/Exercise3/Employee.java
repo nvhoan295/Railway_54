@@ -2,7 +2,7 @@ package com.vti.entity.Exercise3;
 
 import java.util.Arrays;
 
-public class Employee<T> {
+public class Employee<T extends Number> {
 	private int id;
 	private String name;
 	private T[] salaries;
@@ -36,15 +36,10 @@ public class Employee<T> {
 	public void setSalaries(T[] salaries) {
 		this.salaries = salaries;
 	}
-	public T getSalaries1() {
-		return salaries[salaries.length-1];
-	}
-	
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salaries=" + Arrays.toString(salaries) + "]";
 	}
-	
 
 }
