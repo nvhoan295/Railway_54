@@ -123,7 +123,7 @@ public class AccountRepository implements IAccountRepository {
 			preparedStatement.setString(3, fullName);
 			preparedStatement.setInt(4, departmentId);
 			int check = preparedStatement.executeUpdate();
-			if (check >= 0) {
+			if (check >= 1) {
 				System.out.println("Tạo tài khoản thành công");
 			} else {
 				System.out.println("Tạo tài khoản thất bại");
@@ -163,7 +163,7 @@ public class AccountRepository implements IAccountRepository {
 		preparedStatement.setInt(2, id);
 
 		int check = preparedStatement.executeUpdate();
-		if (check >= 0) {
+		if (check >= 1) {
 			System.out.println("Update Complete");
 		} else {
 			System.out.println("Update False");
@@ -180,7 +180,7 @@ public class AccountRepository implements IAccountRepository {
 		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.setInt(1, id);
 		int check = preparedStatement.executeUpdate();
-		if (check >= 0) {
+		if (check >= 1) {
 			System.out.println("Delete Complete");
 		} else {
 			System.out.println("Delete False");
