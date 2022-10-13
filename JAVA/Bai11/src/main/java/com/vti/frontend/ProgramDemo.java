@@ -71,7 +71,7 @@ public class ProgramDemo {
 		System.out.println("4. Create Accounts");
 		System.out.println("5. Delete Accounts");
 		System.out.println("6. Check Email");
-		System.out.println("Thoát.");
+		System.out.println("7. Thoát.");
 		System.out.println("Nhập: ");
 	}
 	
