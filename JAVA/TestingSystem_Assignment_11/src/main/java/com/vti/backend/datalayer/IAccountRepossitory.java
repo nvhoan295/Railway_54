@@ -10,7 +10,7 @@ public interface IAccountRepossitory {
 
 	List<Account> getListAccounts() throws ClassNotFoundException, SQLException;
 
-	Account getAccountByID(int id) throws ClassNotFoundException, SQLException, Exception;
+	Account getAccountByID(int id) throws Exception;
 
 	boolean isAccountExists(String username) throws ClassNotFoundException, SQLException;
 
