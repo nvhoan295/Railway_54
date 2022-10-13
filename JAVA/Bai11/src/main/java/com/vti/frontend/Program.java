@@ -4,7 +4,6 @@ package com.vti.frontend;
 import java.util.List;
 
 import com.vti.Utils.ScannerUtils;
-import com.vti.backend.datalayer.AccountRepository;
 import com.vti.backend.presentationlayer.AccountController;
 import com.vti.entity.Account;
 
@@ -18,7 +17,7 @@ import com.vti.entity.Account;
  * @modifer: HoanNV
  * @modifer_date: Oct 13, 2022
  */
-public class ProgramDemo {
+public class Program {
 	static AccountController controller = new AccountController();
 
 	public static void main(String[] args) {
@@ -53,9 +52,9 @@ public class ProgramDemo {
 			}
 		}
 	}
-	
+
 	/**
-	 * This method is . 
+	 * This method is .
 	 * 
 	 * @Description: .
 	 * @author: HoanNV
@@ -74,9 +73,9 @@ public class ProgramDemo {
 		System.out.println("7. Thoát.");
 		System.out.println("Nhập: ");
 	}
-	
+
 	/**
-	 * This method is . 
+	 * This method is .
 	 * 
 	 * @Description: .
 	 * @author: HoanNV
@@ -98,7 +97,7 @@ public class ProgramDemo {
 	}
 
 	/**
-	 * This method is . 
+	 * This method is .
 	 * 
 	 * @Description: .
 	 * @author: HoanNV
@@ -120,7 +119,7 @@ public class ProgramDemo {
 	}
 
 	/**
-	 * This method is . 
+	 * This method is .
 	 * 
 	 * @Description: .
 	 * @author: HoanNV
@@ -145,7 +144,7 @@ public class ProgramDemo {
 	}
 
 	/**
-	 * This method is . 
+	 * This method is .
 	 * 
 	 * @Description: .
 	 * @author: HoanNV
@@ -171,7 +170,7 @@ public class ProgramDemo {
 	}
 
 	/**
-	 * This method is . 
+	 * This method is .
 	 * 
 	 * @Description: .
 	 * @author: HoanNV
