@@ -13,14 +13,49 @@ import java.util.Properties;
 import com.vti.Utils.JdbcUtils;
 import com.vti.entity.Group;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public class GroupRepository {
 	private JdbcUtils jdbcUtils;
 	
 
+	/**
+	 * Constructor for class GroupRepository.
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public GroupRepository() throws FileNotFoundException, IOException {
 		jdbcUtils = new JdbcUtils();
 	}
 
+	/**
+	 * This method is . 
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	public List<Group> getListGroups() throws ClassNotFoundException, SQLException {
 		// Get connection
 		List<Group> groups = new ArrayList<Group>();

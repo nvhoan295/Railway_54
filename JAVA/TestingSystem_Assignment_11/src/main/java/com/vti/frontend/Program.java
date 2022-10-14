@@ -8,6 +8,16 @@ import java.util.List;
 import com.vti.backend.presentationlayer.GroupController;
 import com.vti.entity.Group;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public class Program {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
 		GroupController controller = new GroupController();

@@ -7,6 +7,16 @@ import com.vti.Utils.ScannerUtils;
 import com.vti.backend.presentationlayer.AccountController;
 import com.vti.entity.Account;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public class AccountProgram {
 	private static AccountController controller;
 
@@ -50,6 +60,18 @@ public class AccountProgram {
 		System.out.print("Mời bạn chọn: ");
 	}
 
+	/**
+	 * This method is . 
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	public static void getListAccount() throws ClassNotFoundException, SQLException {
 		List<Account> accounts = controller.getListAccounts();
 		for (Account account : accounts) {
@@ -57,6 +79,17 @@ public class AccountProgram {
 		}
 	}
 
+	/**
+	 * This method is . 
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws Exception
+	 */
 	public static void getAccountById() throws Exception {
 		System.out.println("Nhập Id: ");
 		int id = ScannerUtils.inputInt();
@@ -64,6 +97,18 @@ public class AccountProgram {
 		System.out.println(account);
 	}
 
+	/**
+	 * This method is . 
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	public static void createAccount() throws ClassNotFoundException, SQLException {
 		System.out.println("Nhập email: ");
 		String email = ScannerUtils.inputString("Nhập kiểu String");
@@ -74,6 +119,18 @@ public class AccountProgram {
 		controller.createAccount(email, userName, fullName);
 	}
 
+	/**
+	 * This method is . 
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	public static void update() throws ClassNotFoundException, SQLException {
 		System.out.println("Nhập Id: ");
 		int id = ScannerUtils.inputId();
@@ -82,6 +139,18 @@ public class AccountProgram {
 		controller.updateAccountByID(id, newName);
 	}
 
+	/**
+	 * This method is . 
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	public static void delete() throws ClassNotFoundException, SQLException {
 		System.out.println("Nhập Id muốn xoá: ");
 		int id = ScannerUtils.inputId();

@@ -10,20 +10,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.PerConnectionLRUFactory;
 import com.vti.Utils.JDBCUtils;
-import com.vti.entity.Admin;
-import com.vti.entity.Employee;
 import com.vti.entity.User;
-import com.vti.entity.User.UserType;
 
-public class UserRepository {
+public class UserRepository implements IUserRepository {
 	private Connection connection;
 
 	public UserRepository() {
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	public List<User> getListUser() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
 		List<User> users = new ArrayList<User>();
 		connection = JDBCUtils.getConnection();
@@ -36,16 +31,10 @@ public class UserRepository {
 			String email = resultSet.getString("email");
 			String passWord = resultSet.getString("password");
 			String userType = resultSet.getString("user_type");
-			if (userType.equals(UserType.ADMIN)) {
-				int expInYear = resultSet.getInt("ExpInYear");
-				Admin admin = new Admin(id, fullName, email, passWord, UserType.ADMIN, expInYear);
-				users.add(admin);
-			} else {
-				String proSkill = resultSet.getString("ProSkill");
-				Employee employee = new Employee(id, fullName, email, passWord, UserType.EMPLOYESS, proSkill);
-				users.add(employee);
-			}
-
+			int expInYear = resultSet.getInt("ExpInYear");
+			String proSkill = resultSet.getString("ProSkill");
+			User user = new User(id, fullName, email, passWord, userType, proSkill, expInYear);
+			users.add(user);
 		}
 		JDBCUtils.disconnect();
 		return users;
@@ -62,6 +51,9 @@ public class UserRepository {
 			user.setId(resultSet.getInt("id"));
 			user.setFullName(resultSet.getString("fullName"));
 			user.setEmail(resultSet.getString("email"));
+			user.setUserType(resultSet.getString("user_type"));
+			user.setExpInYear(resultSet.getInt("ExpInYear"));
+			user.setProSkill(resultSet.getString("ProSkill"));
 
 		}
 
@@ -77,10 +69,11 @@ public class UserRepository {
 		int check = preparedStatement.executeUpdate();
 		if (check > 0) {
 			System.out.println("Delete Complete");
+			System.out.println("Đã xoá user "+ id);
 		} else {
 			System.out.println("Delete False");
 		}
-
+		
 	}
 
 }

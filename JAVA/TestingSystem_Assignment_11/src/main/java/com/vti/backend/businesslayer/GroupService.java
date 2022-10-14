@@ -8,6 +8,16 @@ import java.util.List;
 import com.vti.backend.datalayer.GroupRepository;
 import com.vti.entity.Group;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public class GroupService {
 	private GroupRepository repository;
 	

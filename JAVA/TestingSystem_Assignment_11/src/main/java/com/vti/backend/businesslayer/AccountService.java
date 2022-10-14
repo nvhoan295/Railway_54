@@ -9,20 +9,28 @@ import com.vti.backend.datalayer.AccountRepository;
 import com.vti.backend.datalayer.IAccountRepossitory;
 import com.vti.entity.Account;
 
-public class AccountService implements IAccountService{
-	private List<Account> accounts;
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
+public class AccountService implements IAccountService {
 	private IAccountRepossitory repository;
 
 	public AccountService() throws FileNotFoundException, IOException {
 		repository = new AccountRepository();
 	}
-	
-	public List<Account> getListAccounts() throws ClassNotFoundException, SQLException{
-		return accounts = repository.getListAccounts();
+
+	public List<Account> getListAccounts() throws ClassNotFoundException, SQLException {
+		return repository.getListAccounts();
 	}
 
 	public Account getAccountByID(int id) throws Exception {
-		
 		return repository.getAccountByID(id);
 	}
 
@@ -30,9 +38,10 @@ public class AccountService implements IAccountService{
 		return repository.isAccountExists(username);
 	}
 
-	public void createAccount(String email, String username, String fullName) throws ClassNotFoundException, SQLException {
+	public void createAccount(String email, String username, String fullName)
+			throws ClassNotFoundException, SQLException {
 		repository.createAccount(email, username, fullName);
-		
+
 	}
 
 	public boolean isAccountExists(int id) throws ClassNotFoundException, SQLException {
@@ -41,12 +50,11 @@ public class AccountService implements IAccountService{
 
 	public void updateAccountByID(int id, String newFullName) throws ClassNotFoundException, SQLException {
 		repository.updateAccountByID(id, newFullName);
-		
+
 	}
 
 	public void deleteAccount(int id) throws ClassNotFoundException, SQLException {
 		repository.deleteAccount(id);
 	}
-	
 
 }

@@ -5,6 +5,16 @@ import java.util.List;
 
 import com.vti.entity.Account;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public interface IAccountRepossitory {
 	
 

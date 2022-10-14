@@ -7,10 +7,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
-import com.vti.Utils.FileManager;
-import com.vti.Utils.ScannerUtils;
+import com.vti.Utils.ScannerUltis;
 import com.vti.entity.Student;
 
 public class ProcessStudent {
@@ -29,13 +27,13 @@ public class ProcessStudent {
 	public ArrayList<Student> createStudents() {
 		int n;
 		System.out.println("Nhập số sinh viên muốn thêm");
-		n = ScannerUtils.inputInt();
+		n = ScannerUltis.inputInt();
 		ArrayList<Student> students = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			System.out.println("Nhập name: ");
-			String name = ScannerUtils.inputString();
+			String name = ScannerUltis.inputString();
 			System.out.println("Nhập age: ");
-			int age = ScannerUtils.inputAge();
+			int age = ScannerUltis.inputInt();
 			students.add(new Student(name, age));
 		}
 		return students;

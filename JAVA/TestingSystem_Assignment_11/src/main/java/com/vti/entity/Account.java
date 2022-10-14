@@ -1,5 +1,15 @@
 package com.vti.entity;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public class Account {
 	private int id;
 	private String email;
@@ -19,6 +29,20 @@ public class Account {
 	public Account() {
 	}
 
+	/**
+	 * Constructor for class Account.
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @param id
+	 * @param email
+	 * @param username
+	 * @param fullName
+	 */
 	public Account(int id, String email, String username, String fullName) {
 		this.id = id;
 		this.email = email;

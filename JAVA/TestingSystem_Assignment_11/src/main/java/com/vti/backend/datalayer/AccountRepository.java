@@ -13,16 +13,41 @@ import java.util.List;
 import com.vti.Utils.JdbcUtils;
 import com.vti.entity.Account;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 13, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 13, 2022
+ */
 public class AccountRepository implements IAccountRepossitory {
 	private Connection connection;
 	private List<Account> accounts;
 	private JdbcUtils jdbcUtils;
 
+	/**
+	 * Constructor for class AccountRepository.
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 13, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 13, 2022
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public AccountRepository() throws FileNotFoundException, IOException {
 		this.accounts = new ArrayList<Account>();
 		jdbcUtils = new JdbcUtils();
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#getListAccounts()
+	*/
 	public List<Account> getListAccounts() throws ClassNotFoundException, SQLException {
 		connection = jdbcUtils.connect();
 		String sql = "Select * from `Account`";
@@ -41,6 +66,9 @@ public class AccountRepository implements IAccountRepossitory {
 
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#getAccountByID(int)
+	*/
 	public Account getAccountByID(int id) throws Exception {
 		connection = jdbcUtils.connect();
 		String sql = "Select * from `Account` where AccountID = ?";
@@ -59,6 +87,9 @@ public class AccountRepository implements IAccountRepossitory {
 
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#isAccountExists(java.lang.String)
+	*/
 	public boolean isAccountExists(String username) throws ClassNotFoundException, SQLException {
 		jdbcUtils.connect();
 		String sql = "Select * from `Account` where Username = ?";
@@ -74,6 +105,9 @@ public class AccountRepository implements IAccountRepossitory {
 		}
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#isAccountExists(int)
+	*/
 	public boolean isAccountExists(int id) throws ClassNotFoundException, SQLException {
 		jdbcUtils.connect();
 		String sql = "Select * from `Account` where AccountID = ?";
@@ -89,6 +123,9 @@ public class AccountRepository implements IAccountRepossitory {
 		}
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#updateAccountByID(int, java.lang.String)
+	*/
 	public void updateAccountByID(int id, String newFullName) throws ClassNotFoundException, SQLException {
 		connection = jdbcUtils.connect();
 		String sql = "Update `Account` Set FullName = ? where AccountID = ?";
@@ -105,6 +142,9 @@ public class AccountRepository implements IAccountRepossitory {
 
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#deleteAccount(int)
+	*/
 	public void deleteAccount(int id) throws ClassNotFoundException, SQLException {
 		connection = jdbcUtils.connect();
 		String sql = "Delete from `Account` where AccountID = ?";
@@ -121,6 +161,9 @@ public class AccountRepository implements IAccountRepossitory {
 
 	}
 
+	/* 
+	* @see com.vti.backend.datalayer.IAccountRepossitory#createAccount(java.lang.String, java.lang.String, java.lang.String)
+	*/
 	public void createAccount(String email, String username, String fullName)
 			throws ClassNotFoundException, SQLException {
 		connection = jdbcUtils.connect();
