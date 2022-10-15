@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.vti.backend.bussinesslayer.IUserService;
 import com.vti.backend.bussinesslayer.UserService;
@@ -48,5 +50,37 @@ public class UserController {
 
 	public void deleteUser(int id) throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
 		service.deleteUser(id);
+	}
+
+	public boolean login(String email, String password)
+			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
+
+		try {
+			String regex = "[A-Z]";
+			Pattern pattern = Pattern.compile(regex);
+
+			Matcher matcher = pattern.matcher(regex);
+
+			if (password == null || password.length() <= 6 || password.length() >= 12 || matcher.matches()) {
+				throw new Exception("Password must have between 6-12 characters and at least 1 uppercase letter");
+			}
+			if (!isValidEmailAddress(email)) {
+				throw new Exception("Invalid email format!");
+			}
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return service.login(email, password);
+
+	}
+
+	public boolean isValidEmailAddress(String email) {
+		return service.isValidEmailAddress(email);
+	}
+
+	public boolean isNameValid(String name) {
+		return service.isNameValid(name);
 	}
 }

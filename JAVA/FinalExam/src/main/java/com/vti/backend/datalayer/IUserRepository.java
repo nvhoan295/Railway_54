@@ -9,7 +9,7 @@ import java.util.List;
 import com.vti.entity.User;
 
 /**
- * This class is . 
+ * This class is .
  * 
  * @Description: .
  * @author: HoanNV
@@ -20,6 +20,15 @@ import com.vti.entity.User;
  */
 public interface IUserRepository {
 	List<User> getListUser() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
+
 	User getUser(int id) throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
+
 	void deleteUser(int id) throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
+
+	public boolean login(String email, String password);
+
+	public boolean isValidEmailAddress(String email);
+
+	public boolean isNameValid(String name);
+
 }

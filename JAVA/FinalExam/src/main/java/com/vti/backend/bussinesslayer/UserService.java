@@ -58,6 +58,29 @@ public class UserService implements IUserService{
 	public void deleteUser(int id) throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
 		repository.deleteUser(id);
 	}
+
+	/* 
+	* @see com.vti.backend.bussinesslayer.IUserService#login(java.lang.String, java.lang.String)
+	*/
+	public boolean login(String email, String password)
+			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
+		
+		return repository.login(email, password);
+	}
+
+	/* 
+	* @see com.vti.backend.bussinesslayer.IUserService#isValidEmailAddress(java.lang.String)
+	*/
+	public boolean isValidEmailAddress(String email) {
+		return repository.isValidEmailAddress(email);
+	}
+
+	/* 
+	* @see com.vti.backend.bussinesslayer.IUserService#isNameValid(java.lang.String)
+	*/
+	public boolean isNameValid(String name) {
+		return repository.isNameValid(name);
+	}
 	
 	
 	

@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.vti.Utils.JDBCUtils;
 import com.vti.entity.User;
@@ -69,11 +71,47 @@ public class UserRepository implements IUserRepository {
 		int check = preparedStatement.executeUpdate();
 		if (check > 0) {
 			System.out.println("Delete Complete");
-			System.out.println("Đã xoá user "+ id);
+			System.out.println("Đã xoá user " + id);
 		} else {
 			System.out.println("Delete False");
 		}
-		
+
 	}
 
+	public boolean login(String email, String password) {
+		try {
+			connection = JDBCUtils.getConnection();
+			String sql = "Select * from `user` where email = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, email);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if (!resultSet.next()) {
+				System.out.println("Email: " + email + " không tồn tại");
+				return false;
+			} else if (password.equals(resultSet.getString("password"))) {
+				System.out.println("Login Success");
+			} else {
+				System.out.println("Email and password did not match");
+				return false;
+			}
+			JDBCUtils.disconnect();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return true;
+	}
+	
+	public boolean isValidEmailAddress(String email) {
+		String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+		Pattern p = Pattern.compile(ePattern);
+		Matcher m = p.matcher(email);
+		return m.matches();
+	}
+	
+	public boolean isNameValid(String name) {
+		String regex = "^[a-zA-Z]\\w{5,50}$";
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(name);
+		return m.matches();
+	}
 }

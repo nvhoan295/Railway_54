@@ -1,7 +1,21 @@
 package com.vti.Utils;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+/**
+ * This class is ScannerUtils
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 14, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 14, 2022
+ */
 public class ScannerUtils {
 
 	private static Scanner scanner = new Scanner(System.in);
@@ -18,7 +32,7 @@ public class ScannerUtils {
 	}
 
 	public static String inputName() {
-		return inputString("Please input a name, please input again.");
+		return inputString();
 	}
 
 	public static int inputInt() {
@@ -55,13 +69,13 @@ public class ScannerUtils {
 		}
 	}
 
-	public static String inputString(String errorMessage) {
+	public static String inputString() {
 		while (true) {
 			String input = scanner.nextLine().trim();
 			if (!input.isEmpty()) {
 				return input;
 			} else {
-				System.err.println(errorMessage);
+				System.err.println("Nhập lại: ");
 			}
 		}
 	}
@@ -92,4 +106,105 @@ public class ScannerUtils {
 		}
 	}
 
+	public static LocalDate inputLocalDate() {
+		System.out.println("Nhập theo định dạng yyyy-MM-dd");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		while (true) {
+			String localdate = scanner.next().trim();
+			try {
+				if (format.parse(localdate) != null) {
+					LocalDate lc = LocalDate.parse(localdate);
+					return lc;
+				}
+			} catch (Exception e) {
+				System.err.println("Nhập lại:");
+			}
+		}
+	}
+
+	/**
+	 * This method is inputEmail
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 15, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 15, 2022
+	 * @return
+	 */
+	public static String inputEmail() {
+		while (true) {
+
+			String email = ScannerUtils.inputString();
+			String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+			Pattern p = Pattern.compile(ePattern);
+			Matcher m = p.matcher(email);
+			boolean isEmail = m.matches();
+
+			if (!isEmail) {
+				System.out.print("Nhập lại: ");
+			} else {
+				return email;
+			}
+		}
+	}
+
+	public static int inputFunction(int a, int b, String errorMessage) {
+		while (true) {
+			int number = ScannerUtils.inputInt();
+			if (number >= a && number <= b) {
+				return number;
+			} else {
+				System.err.println(errorMessage);
+			}
+		}
+	}
+
+	public static String inputPassword() {
+		while (true) {
+			String password = ScannerUtils.inputString();
+			if (password.length() < 6 || password.length() > 12) {
+				System.out.print("Nhập lại: ");
+				continue;
+			}
+			boolean hasAtLeast1Character = false;
+			for (int i = 0; i < password.length(); i++) {
+				if (Character.isUpperCase(password.charAt(i)) == true) {
+					hasAtLeast1Character = true;
+					break;
+				}
+			}
+			if (hasAtLeast1Character == true) {
+				return password;
+			} else {
+				System.out.print("Mời bạn nhập lại password: ");
+			}
+		}
+	}
+
+	public static String inputPhoneNumber() {
+		while (true) {
+			String number = ScannerUtils.inputString();
+
+			if (number.length() > 12 || number.length() < 9) {
+				continue;
+			}
+			if (number.charAt(0) != '0') {
+				continue;
+			}
+			boolean isNumber = true;
+			for (int i = 0; i < number.length(); i++) {
+				if (Character.isDigit(number.charAt(i)) == false) {
+					isNumber = false;
+					break;
+				}
+			}
+			if (isNumber == true) {
+				return number;
+			} else {
+				System.out.print("Nhập lại: ");
+			}
+		}
+	}
 }
