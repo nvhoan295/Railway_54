@@ -21,45 +21,7 @@ import com.vti.entity.User;
 public class Demo {
 	public static void main(String[] args) {
 
-		while (true) {
-			System.out.println("------ Đăng nhập ------");
-			System.out.println("Nhập Email: ");
-			String email = ScannerUtils.inputEmail();
-			System.out.println("Nhập password: ");
-			String password = ScannerUtils.inputString();
-			boolean isLogin = new UserRepository().login(email, password);
-			if (!isLogin) {
-				System.out.println("Nhập sai. Nhập lại...");
-			}
-			while (isLogin) {
-				System.out.println("Xin chào "+ email);
-				System.out.println("===========");
-				System.out.println("----- MENU -----");
-				System.out.println("1. GetListUser");
-				System.out.println("2. Get List User By ID");
-				System.out.println("3. Delete User By ID");
-				System.out.println("4. Thoát");
-				System.out.print("Mời bạn nhập: ");
-				int choose = ScannerUtils.inputInt();
-				switch (choose) {
-				case 1:
-					getListUser();
-					break;
-				case 2:
-					getUserById();
-					break;
-				case 3:
-					deleteUserById();
-					break;
-				case 4:
-					System.out.println("Thoát");
-					return;
-				default:
-					System.out.println("Nhập lại.");
-					break;
-				}
-			}
-		}
+		
 	}
 
 	public static void getListUser() {
