@@ -116,12 +116,12 @@ public class Program {
 			user = controller.login(email, password);
 
 			if (user == null) {
-				System.out.println("Đăng nhập lại: ");
+				System.out.println("Sai email hoặc password. Đăng nhập lại: ");
 				login();
 
 			} else {
 				System.out.println("Đăng nhập thành công");
-				System.out.println("Xin chào, " + email);
+				System.out.println("Xin chào, " + user.getFullName());
 				Menu();
 			}
 

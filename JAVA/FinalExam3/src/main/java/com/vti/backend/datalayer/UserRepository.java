@@ -118,8 +118,9 @@ public class UserRepository implements IUserRepository {
 			String position = resultSet.getString("position");
 			String emailUser = resultSet.getString("email");
 			String passwordUser = resultSet.getString("password");
+			
 			user = new User(emailUser, passwordUser, position);
-
+			user.setFullName(resultSet.getString("full_name"));
 		}
 		return user;
 	}

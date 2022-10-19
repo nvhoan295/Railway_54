@@ -15,8 +15,11 @@ import com.vti.Utils.ScannerUtils;
  */
 public class Demo {
 	public static void main(String[] args) {
-		System.out.println("Nhập pass: ");
-		String pass = ScannerUtils.inputPassword();
-		System.out.println("Pass: "+ pass);
+//		System.out.println("Nhập pass: ");
+//		String pass = ScannerUtils.inputPassword();
+//		System.out.println("Pass: "+ pass);
+		System.out.println("Nhập fullName");
+		String fullName = ScannerUtils.inputFullName();
+		System.out.println(fullName);
 	}
 }
