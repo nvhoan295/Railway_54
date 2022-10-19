@@ -9,13 +9,22 @@ import com.vti.backend.datalayer.UserRepository;
 import com.vti.backend.presentationlayer.UserController;
 import com.vti.entity.User;
 
+/**
+ * This class is . 
+ * 
+ * @Description: .
+ * @author: HoanNV
+ * @create_date: Oct 19, 2022
+ * @version: 1.0
+ * @modifer: HoanNV
+ * @modifer_date: Oct 19, 2022
+ */
 public class Program {
 	static List<User> users = new ArrayList<User>();
 	static UserController controller = new UserController();
 	static User user = null;
 
 	public static void main(String[] args) {
-
 		login();
 
 	}
@@ -135,8 +144,8 @@ public class Program {
 	public static void createUser() {
 		try {
 			if (user.getPosition().equals("ADMIN")) {
-				System.err.println("Bạn là Admin");
-				System.err.println("Mời tạo User");
+				System.out.println("Bạn là Admin");
+				System.out.println("Mời tạo User");
 				System.out.print("Nhập FullName: ");
 				String fullName = ScannerUtils.inputFullName();
 				System.out.print("Nhập Email: ");
