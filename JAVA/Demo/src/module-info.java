@@ -1,0 +1,7 @@
+//
+/**
+ * @author nguyenhoan
+ *
+ */
+module Demo {
+}

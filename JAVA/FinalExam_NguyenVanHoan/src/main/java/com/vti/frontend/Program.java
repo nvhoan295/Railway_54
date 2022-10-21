@@ -10,7 +10,7 @@ import com.vti.backend.presentationlayer.UserController;
 import com.vti.entity.User;
 
 /**
- * This class is . 
+ * This class is .
  * 
  * @Description: .
  * @author: HoanNV
@@ -33,28 +33,20 @@ public class Program {
 		while (true) {
 			System.out.println("****************");
 			System.out.println("--- Xin Chào ----");
-			System.out.println("1. GetListUser");
-			System.out.println("2. GetUserById");
-			System.out.println("3. Create User");
-			System.out.println("4. Delete User By Id");
-			System.out.println("5. Thoát");
+			System.out.println("1. Get User By ProjectId");
+			System.out.println("2. Get List User Manager");
+			System.out.println("3. Thoát");
 			System.out.print("Mời nhập: ");
 			int choose = ScannerUtils.inputInt();
 			switch (choose) {
 			case 1:
-				getListUser();
-				break;
-			case 2:
-				getUserByID();
-				break;
-			case 3:
-				createUser();
+				getUserByProjectId();
 
 				break;
-			case 4:
-				deleteUserByID();
+			case 2:
+				getListUserManager();
 				break;
-			case 5:
+			case 3:
 				System.out.println("Thoát. Tạm biệt");
 				return;
 			default:
@@ -65,63 +57,67 @@ public class Program {
 		}
 	}
 
-	public static void getListUser() {
-		try {
-			
-			users = controller.getListUsers();
-			for (User user : users) {
-				infor(user);
-			}
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
+	/**
+	 * This method is .
+	 * 
+	 * @Description: .
+	 * @author: HoanNV
+	 * @create_date: Oct 21, 2022
+	 * @version: 1.0
+	 * @modifer: HoanNV
+	 * @modifer_date: Oct 21, 2022
+	 */
 
-	public static void getUserByID() {
+//	2. Viết function để user nhập vào id project, sau đó in ra tất cả các employee
+//	trong project đó (in ra dạng table)
+	public static void getUserByProjectId() {
 		try {
-			System.out.println("Nhập Id: ");
-			int id = ScannerUtils.inputInt();
-			User user = controller.getUser(id);
+			System.out.println("Nhập ProjectId: ");
+			int projectId = ScannerUtils.inputInt();
+			User user = controller.getUser(projectId);
 			infor(user);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
-	public static void deleteUserByID() {
+//	3. Viết function để user có thể lấy ra tất cả Manager của các project (in ra dạng table)
+
+	public static void getListUserManager() {
 		try {
-			System.out.println("Nhập ID: ");
-			int id = ScannerUtils.inputInt();
-			boolean check = controller.deleteUserById(id);
-			if (check) {
-				System.out.println("Delete Compele");
-			} else {
-				System.out.println("Delete False");
+			users = controller.getListUsers();
+			for (User user : users) {
+				if (user.getRole().equals("MANAGER")) {
+					infor(user);
+				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
 	}
 
 	public static void infor(User user) {
 		System.out.println("ID: " + user.getId());
 		System.out.println("FullName: " + user.getFullName());
 		System.out.println("Email: " + user.getEmail());
-		System.out.println("Position: " + user.getPosition());
+		System.out.println("Role: " + user.getRole());
 		System.out.println("ProSkill: " + user.getProSkill());
 		System.out.println("ExpInYear: " + user.getExpInYear());
+		System.out.println("ProjectId: " + user.getProjectId());
 		System.out.println("-------");
 	}
 
 	public static void login() {
+		// Chức năng này chỉ MANAGER đăng nhập được. EMPLOYEE không đăng nhập được.
 		try {
 			System.out.println(" --- Đăng nhập --- ");
+			System.out.println("Chỉ MANAGER mới đăng nhập được");
 			System.out.println("Nhập Email: ");
 			// Xử lý Email trong Scanner
 			String email = ScannerUtils.inputEmail();
+			// Xử lý tính hợp lệ password trong Scannar
 			System.out.println("Nhập password: ");
-			String password = ScannerUtils.inputString();
+			String password = ScannerUtils.inputPassword();
 
 			user = controller.login(email, password);
 
@@ -138,31 +134,6 @@ public class Program {
 		} catch (Exception e) {
 			System.out.println("Đăng nhập lại");
 			login();
-		}
-
-	}
-
-	public static void createUser() {
-		try {
-			if (user.getPosition().equals("ADMIN")) {
-				System.out.println("Bạn là Admin");
-				System.out.println("Mời tạo User");
-				System.out.print("Nhập FullName: ");
-				String fullName = ScannerUtils.inputFullName();
-				System.out.print("Nhập Email: ");
-				String email = ScannerUtils.inputEmail();
-				System.out.println("Nhập ProSkill: ");
-				String proSkill = ScannerUtils.inputString();
-				controller.createUser(fullName, email, proSkill);
-				getListUser();
-			} else {
-				System.out.println("Bạn không phải Admin. Quay lại");
-				Menu();
-			}
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			Menu();
 		}
 
 	}
