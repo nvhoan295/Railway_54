@@ -9,7 +9,7 @@ import java.util.List;
 import com.vti.entity.User;
 
 /**
- * This class is . 
+ * This class is .
  * 
  * @Description: .
  * @author: HoanNV
@@ -26,4 +26,6 @@ public interface IUserService {
 
 	public User login(String email, String password)
 			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
+
+	public List<User> getListUsersByProjectID(int projectId) throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
 }

@@ -53,4 +53,12 @@ public class UserService implements IUserService{
 		return repository.login(email, password);
 	}
 
+	/* 
+	* @see com.vti.backend.businesslayer.IUserService#getListUsersByProjectID(int)
+	*/
+	public List<User> getListUsersByProjectID(int projectId)
+			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
+		return repository.getListUsersByProjectID(projectId);
+	}
+
 }

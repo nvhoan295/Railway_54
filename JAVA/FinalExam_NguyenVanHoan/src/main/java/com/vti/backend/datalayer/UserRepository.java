@@ -56,6 +56,7 @@ public class UserRepository implements IUserRepository {
 			String proSkill = resultSet.getString("pro_skill");
 			user = new User(iduser, fullName, email, password, role, expInYear, proSkill, projectId);
 		}
+		JDBCUtils.disconnect();
 		return user;
 	}
 
@@ -79,6 +80,7 @@ public class UserRepository implements IUserRepository {
 			User user = new User(iduser, fullName, email, password, role, expInYear, proSkill, projectId);
 			users.add(user);
 		}
+		JDBCUtils.disconnect();
 		return users;
 	}
 
@@ -104,7 +106,31 @@ public class UserRepository implements IUserRepository {
 			// Lấy thêm biến FullName để dùng vào chức năng login trong Program
 			user.setFullName(resultSet.getString("full_name"));
 		}
+		JDBCUtils.disconnect();
 		return user;
+	}
+	
+	public List<User> getListUsersByProjectID(int projectId) throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
+		connection = JDBCUtils.getConnection();
+		String sql = "Select * from `user` where projectId = ?";
+		PreparedStatement statement = connection.prepareStatement(sql);
+		statement.setInt(1, projectId);
+		
+		ResultSet resultSet = statement.executeQuery();
+		while (resultSet.next()) {
+			int iduser = resultSet.getInt("id");
+			String fullName = resultSet.getString("full_name");
+			String email = resultSet.getString("email");
+			String password = resultSet.getString("password");
+			String role = resultSet.getString("role");
+			int expInYear = resultSet.getInt("exp_in_year");
+			String proSkill = resultSet.getString("pro_skill");
+			int project = resultSet.getInt("projectId");
+			User user = new User(iduser, fullName, email, password, role, expInYear, proSkill, project);
+			users.add(user);
+		}
+		JDBCUtils.disconnect();
+		return users;
 	}
 
 }

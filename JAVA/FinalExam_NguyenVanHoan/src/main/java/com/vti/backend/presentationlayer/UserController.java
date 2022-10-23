@@ -50,4 +50,9 @@ public class UserController {
 		return service.login(email, password);
 	}
 
+	public List<User> getListUsersByProjectID(int projectId)
+			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
+		return service.getListUsersByProjectID(projectId);
+	}
+
 }

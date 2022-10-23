@@ -27,4 +27,6 @@ public interface IUserRepository {
 	public User login(String email, String password)
 			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
 
+	public List<User> getListUsersByProjectID(int projectId)
+			throws ClassNotFoundException, FileNotFoundException, SQLException, IOException;
 }

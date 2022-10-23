@@ -33,7 +33,7 @@ public class Program {
 		while (true) {
 			System.out.println("****************");
 			System.out.println("--- Xin Chào ----");
-			System.out.println("1. Get User By ProjectId");
+			System.out.println("1. Get EMPLOYEE By ProjectId");
 			System.out.println("2. Get List User Manager");
 			System.out.println("3. Thoát");
 			System.out.print("Mời nhập: ");
@@ -41,7 +41,6 @@ public class Program {
 			switch (choose) {
 			case 1:
 				getUserByProjectId();
-
 				break;
 			case 2:
 				getListUserManager();
@@ -74,8 +73,13 @@ public class Program {
 		try {
 			System.out.println("Nhập ProjectId: ");
 			int projectId = ScannerUtils.inputInt();
-			User user = controller.getUser(projectId);
-			infor(user);
+			users = controller.getListUsersByProjectID(projectId);
+			for (User user : users) {
+				if (user.getRole().equals("EMPLOYEE")) {
+					infor(user);
+				}
+			}
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
