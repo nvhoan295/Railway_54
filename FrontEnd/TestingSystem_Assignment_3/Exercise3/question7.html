@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Question 7:
+    Xây dựng chương trình có một ô Input, một button. Khi click
+    vào button thì in các số từ 1 tới giá trị của ô input. -->
+    <h1>Chương trình in số</h1>
+    <input type="number" id="soTuNhien" placeholder="Nhấp số tự nhiên n ....">
+    <button onclick="func()">Ấn vào đấy</button>
+    <h2 id="ketqua"></h2>
+
+    <script>
+        function func() {
+            let n = document.getElementById("soTuNhien").value;
+            let text = " ";
+            for (let i = 1; i <= n; i++) {
+                text += i + " ";
+            }
+            document.getElementById("ketqua").innerHTML = "Dãy số từ 1 đến " + n + " : " + text;
+        }
+    </script>
+</body>
+
+</html>

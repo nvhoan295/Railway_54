@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>JavaScrip</h1>
     <h3>Nhân viên có tài khoản Account2</h3>
     <p id="demo"></p>
     <h3>Thông tin acc2</h3>
     <p id="acc"></p>
+    <h3 id="info"></h3>
+    <h4 id="hello"></h4>
+    <h4 id="acc1"></h4>
     <script>
 
 
@@ -24,20 +29,22 @@
             this.id = id;
             this.name = name;
         }
-        function Account(id, email, username, fullname, department, position, createDate) {
+        function Account(id, email, username, fullname, Department, Position, createDate) {
             this.id = id;
-            this.email =email;
+            this.email = email;
             this.username = username;
             this.fullname = fullname;
-            this.department = Department.id;
-            this.position = Position.id;
+            this.department = Department;
+            this.position = Position;
             this.createDate = createDate;
-            
+            this.group = Group;
+
         }
-        function Group(name, accountId, createDate) {
+        function Group(name, Account, createDate) {
             count = 1;
             this.id = count++;
-            this.accountId = [];
+            this.name = name;
+            this.account = Account;
             this.createDate = createDate;
         }
 
@@ -49,37 +56,53 @@
         var pos2 = new Position(2, "Test");
         var pos3 = new Position(3, "PM");
 
-        var acc1 = new Account(1, "hoan@gamil.com", "hoan", dep1, pos1, "2020");
-        var acc2 = new Account(2, "thao@gmail.com", "thaor", dep2, pos3, "2021");
-        var acc3 = new Account(3, "anna@gmail.com", "anna", dep3, pos2, "2020");
-        
+        var acc1 = new Account(1, "hoan@gamil.com", "hoan", "Nguyen Hoan", dep1, pos1, "2020");
+        var acc2 = new Account(2, "thao@gmail.com", "thaor","Thao nguyen", dep2, pos3, "2021");
+        var acc3 = new Account(3, "anna@gmail.com", "anna", "Anna ", dep3, pos2, "2020");
+
         var group1 = new Group("chem gio", [acc1, acc2], "2020");
         var group2 = new Group("cong vien", [acc1, acc2, acc3], "2022");
-       
-        var groupAccount = [acc1, acc2, acc3];
-        var arrAcc2 = [group1, group2];
 
-        let x = arrAcc2.length;
-        if (x == null) {
-            document.getElementById("demo").innerHTML = "Nhân viên chưa có phòng ban";
+
+
+        acc2.group = [group1, group2];
+    
+        switch (acc2.group.length) {
+            case 1:
+                document.getElementById("acc").innerHTML = "Tham gia 1 phòng";
+                break;
+            case 2:
+                document.getElementById("acc").innerHTML = "Tham gia 2 phòng";
+                break;
+            
+            default:
+
+                break;
+        }
+        let text = "";
+        const arrAcc = [acc1, acc2, acc3];
+        for (let i = 0; i < arrAcc.length; i++) {
+                text += "Email: " + arrAcc[i].email + "<br>"
+                text += "FullName: " + arrAcc[i].fullname + "<br>"
+                text += "Department: " + arrAcc[i].department.name + "<br>"
+                text += "Position: " + arrAcc[i].position.name + "<br>"
+                text += "CrateDate: " + arrAcc[i].createDate + "<br>"
+                text += "----------------"+ "<br>"
+        }
+        document.getElementById("info").innerHTML = text;
+        document.getElementById("hello").innerHTML = "Group2 có số thành viên là: " + group2.account.length;
+
+
+        if (acc1.position.name == "Dev") {
+            document.getElementById("acc1").innerHTML = "Acc1 là Dev"
         } else {
-            document.getElementById("demo").innerHTML = "Nhân viên có phòng ban";
+            document.getElementById("acc1").innerHTML = "Acc1 không phải là Dev"
         }
 
-        if (acc1.position == "Dev") {
-            document.getElementById("demo").innerHTML = "Đây là Dev";
-        } else {
-            document.getElementById("demo").innerHTML = "Không phải Dev";
-        }
-
-
-        text = "";
-        document.getElementById("acc").innerHTML = "Email: " + acc1.email;
-        document.getElementById("acc").innerHTML = "FullName: " + acc1.fullname;
+        
 
 
 
-        console.log(acc1.email);
 
 
 
@@ -90,4 +113,5 @@
 
 
 </body>
+
 </html>

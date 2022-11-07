@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Question 2:
+    Viết chương trình nhập một số bất kỳ trong khoảng [1 - 10], kiểm tra
+    và hiển thị ra màn hình theo cách tính sau:
+    - Điểm 9, 10 thì hiển thị ra màn hình: học sinh Giỏi
+    - Điểm 7, 8 thì hiển thị ra màn hình: học sinh Khá
+    - Điểm 5, 6 thì hiển thị ra màn hình: học sinh TB
+    Còn lại là học sinh Yếu
+    Gợi ý: Sử dụng prompt, if-else, document.write(); -->
+    <h2>Kiểm tra học lực</h2>
+    <button onclick="hocLuc()">Kiểm tra học lực</button>
+    <h3 id="ketqua"></h3>
+
+    <script>
+        function hocLuc() {
+            let kiemTra = prompt("Nhập điểm vào đây", 9);
+            if (kiemTra >= 9) {
+                document.getElementById("ketqua").innerHTML = "Giỏi";
+            } else if (kiemTra >= 7) {
+                document.getElementById("ketqua").innerHTML = "Khá";
+            } else if (kiemTra >= 5) {
+                document.getElementById("ketqua").innerHTML = "Trung Bình";
+            } else {
+                document.getElementById("ketqua").innerHTML = "Yếu";
+            }
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

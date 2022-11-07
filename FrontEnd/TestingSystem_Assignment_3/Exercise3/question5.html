@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Question 5:
+    Viết chương trình nhập vào số tháng, số năm. Sau đó in ra số ngày của
+    tháng đó.
+    Chú ý:
+    - Năm nhuận tháng 2 có 29 ngày.
+    - Năm nhuận là năm chia hết cho 4 và không chia hết cho 100
+    hoặc chia hết cho 400. -->
+    <table>
+        <tr>
+            <td>Nhập tháng</td>
+            <td><input type="number" name="thang" id="thang" placeholder="Nhập tháng..."></td>
+        </tr>
+        <tr>
+            <td>Nhập năm</td>
+            <td><input type="number" name="nam" id="nam" placeholder="Nhập năm...."></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="tinhToan()">Tính toán</button></td>
+        </tr>
+        <tr>
+            <td>Số ngày trong tháng</td>
+            <td id="ketqua" style="text-align: center;"></td>
+        </tr>
+    </table>
+    <script>
+        function tinhToan() {
+            let nhapThang = document.getElementById("thang").value;
+            let nhapNam = document.getElementById("nam").value;
+            if (nhapThang == 1 || nhapThang == 3 || nhapThang == 5 || nhapThang == 7 || nhapThang == 8 || nhapThang == 10 || nhapThang == 12) {
+                document.getElementById("ketqua").innerHTML = "Tháng có 31 ngày";
+            } else if(nhapThang == 2){
+                document.getElementById("ketqua").innerHTML = "Tháng có 28 ngày";
+            } else {
+                document.getElementById("ketqua").innerHTML = "Tháng có 30 ngày";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

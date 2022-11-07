@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 2px solid black;
+        }
+        h4 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="2">Hình chữ nhật</th>
+        </tr>
+        <tr>
+            <td>Nhập chiều dài: </td>
+            <td><input type="number" name="dai" id="dai"></td>
+        </tr>
+        <tr>
+            <td>Nhập chiều rộng: </td>
+            <td><input type="number" name="rong" id="rong"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="tinhToan()">Tính toán</button></td>
+        </tr>
+        <tr>
+            <td>Chu vi là: </td>
+            <td><h4 id="chuvi"></h4></td>
+        </tr>
+        <tr>
+            <td>Diện tích là: </td>
+            <td><h4 id="dientich"></h4></td>
+        </tr>
+
+    </table>
+
+
+    <script>
+        function tinhToan() {
+            let chieuDai = document.getElementById("dai").value;
+            let chieuRong = document.getElementById("rong").value;
+
+            let chuVi = 2*chieuDai + 2*chieuRong;
+            document.getElementById("chuvi").innerHTML = chuVi;
+            let dienTich = chieuDai * chieuRong;
+            document.getElementById("dientich").innerHTML = dienTich;
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

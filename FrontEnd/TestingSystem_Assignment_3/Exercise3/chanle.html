@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Phần mềm kiểm tra số chẵn lẻ</h1>
+    <button onclick="chanLe()">Kiểm tra chẵn lẻ</button>
+    <h2 id="ketqua"></h2>
+
+
+    <script>
+        function chanLe() {
+            let nhapSo = prompt("Nhập số vào đây", 9)
+            if (nhapSo % 2 == 0) {
+                document.getElementById("ketqua").innerHTML = nhapSo + " là số chẵn";
+            } else {
+                document.getElementById("ketqua").innerHTML = nhapSo + " là số lẻ";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

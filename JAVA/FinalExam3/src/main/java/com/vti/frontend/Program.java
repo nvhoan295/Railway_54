@@ -10,7 +10,7 @@ import com.vti.backend.presentationlayer.UserController;
 import com.vti.entity.User;
 
 /**
- * This class is . 
+ * This class is .
  * 
  * @Description: .
  * @author: HoanNV
@@ -67,7 +67,7 @@ public class Program {
 
 	public static void getListUser() {
 		try {
-			
+
 			users = controller.getListUsers();
 			for (User user : users) {
 				infor(user);
