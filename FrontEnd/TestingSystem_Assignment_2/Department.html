@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+
+    <h1>Hello JavaScrip!</h1>
+    <script>
+        function department(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+        var dep1 = new department(1, "Sale");
+        console.log(dep1);
+
+        function position(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        var pos1 = new position(1, "manager");
+        console.log(pos1);
+
+        function account(id, email, userName, department, position, createDate) {
+            this.id = id;
+            this.email = email;
+            this.userName = userName;
+            this.department = department;
+            this.position = position;
+            this.createDate = createDate;
+        }
+
+        var acc1 = new account(1, 'hoan@gmail.com', 'hoannv', dep1, pos1, "20/05/1990");
+        console.log(acc1);
+        var a = 3;
+        if (a > 0) {
+            console.log("a lowns hown 0");
+        } else {
+            console.log("a nho hon 0");
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

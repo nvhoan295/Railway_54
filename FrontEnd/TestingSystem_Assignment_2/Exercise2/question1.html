@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+
+        .header {
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .topnav a {
+            color: white;
+            float: left;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 15px;
+        }
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width:600px) {
+            .column {
+                width: 100%;
+            }
+        }
+        .Footer {
+            padding: 15px;
+            text-align: center;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+
+    <div class="topnav">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique mollitia, nobis animi consequuntur beatae soluta? Sed doloremque velit odio quae? Inventore adipisci culpa, facilis cumque voluptas iste dolore enim. Ipsa.</p>
+        </div>
+
+        <div class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique mollitia, nobis animi consequuntur beatae soluta? Sed doloremque velit odio quae? Inventore adipisci culpa, facilis cumque voluptas iste dolore enim. Ipsa.</p>
+        </div>
+
+        <div class="column">
+            <h2>Column</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique mollitia, nobis animi consequuntur beatae soluta? Sed doloremque velit odio quae? Inventore adipisci culpa, facilis cumque voluptas iste dolore enim. Ipsa.</p>
+        </div>
+    </div>
+
+    <div class="Footer">
+        <p>Footer</p>
+    </div>
+    <script>
+       function Person(fullName, age, add) {
+            this.fullName = fullName
+            this.age = age
+            this.add = add
+       }
+
+       var my = new Person('Hoan', 32, 'Hanoi')
+       console.log(my);
+
+
+
+    </script>
+</body>
+</html>

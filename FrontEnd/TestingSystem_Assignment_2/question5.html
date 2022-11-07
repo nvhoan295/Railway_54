@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            width: 100%;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        nav {
+            float: left;
+            width: 30%;
+            height: 400px;
+            background-color: red;
+        }
+
+        article {
+            float: left;
+            width: 70%;
+            height: 400px;
+            background-color: gray;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            background-color: black;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li>Hà Nội</li>
+                <li>Hải Phòng</li>
+                <li>Đà Nẵng</li>
+            </ul>
+        </nav>
+        <article>
+
+        </article>
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+
+</html>

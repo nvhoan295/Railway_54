@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScrip</h1>
+    <h3>Nhân viên có tài khoản Account2</h3>
+    <p id="demo"></p>
+    <h3>Thông tin acc2</h3>
+    <p id="acc"></p>
+    <script>
+
+
+
+        function Department(id, name) {
+            this.id = id;
+            this.name = name
+        }
+        function Position(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+        function Account(id, email, username, fullname, department, position, createDate) {
+            this.id = id;
+            this.email =email;
+            this.username = username;
+            this.fullname = fullname;
+            this.department = Department.id;
+            this.position = Position.id;
+            this.createDate = createDate;
+            
+        }
+        function Group(name, accountId, createDate) {
+            count = 1;
+            this.id = count++;
+            this.accountId = [];
+            this.createDate = createDate;
+        }
+
+        var dep1 = new Department(1, "Sale");
+        var dep2 = new Department(2, "Tổ chức");
+        var dep3 = new Department(3, "Giám đốc");
+
+        var pos1 = new Position(1, "Dev");
+        var pos2 = new Position(2, "Test");
+        var pos3 = new Position(3, "PM");
+
+        var acc1 = new Account(1, "hoan@gamil.com", "hoan", dep1, pos1, "2020");
+        var acc2 = new Account(2, "thao@gmail.com", "thaor", dep2, pos3, "2021");
+        var acc3 = new Account(3, "anna@gmail.com", "anna", dep3, pos2, "2020");
+        
+        var group1 = new Group("chem gio", [acc1, acc2], "2020");
+        var group2 = new Group("cong vien", [acc1, acc2, acc3], "2022");
+       
+        var groupAccount = [acc1, acc2, acc3];
+        var arrAcc2 = [group1, group2];
+
+        let x = arrAcc2.length;
+        if (x == null) {
+            document.getElementById("demo").innerHTML = "Nhân viên chưa có phòng ban";
+        } else {
+            document.getElementById("demo").innerHTML = "Nhân viên có phòng ban";
+        }
+
+        if (acc1.position == "Dev") {
+            document.getElementById("demo").innerHTML = "Đây là Dev";
+        } else {
+            document.getElementById("demo").innerHTML = "Không phải Dev";
+        }
+
+
+        text = "";
+        document.getElementById("acc").innerHTML = "Email: " + acc1.email;
+        document.getElementById("acc").innerHTML = "FullName: " + acc1.fullname;
+
+
+
+        console.log(acc1.email);
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+       
+        table, td {
+           border: 1px solid;
+           border-collapse: collapse;
+           background-color: lightskyblue;
+           padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Họ và tên</td>
+            <td><input type="text" placeholder="Nhập họ tên"></td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" placeholder="Nhập địa chỉ"></td>
+        </tr>
+        <tr>
+            <td>Điện thoại</td>
+            <td><input type="number" placeholder="Nhập số điện thoại"></td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td><span><input type="radio" name="Giới tính" id="nam">Nam</span><span><input type="radio" name="Giới tính" id="nữ">Nữ</span></td>
+        </tr>
+        <tr>
+            <td>Nghề nghiệp</td>
+            <td>
+                <select name="address">
+                    <option value="Giáo viên">Giáo viên</option>
+                    <option value="Kỹ sư">Kỹ sư</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Chọn sản phẩm tham gia</td>
+            <td>
+                <select name="sanpham">
+                    <option value="kemdanhrang">Kem đánh răng</option>
+                    <option value="botgiat">Bột giặt</option>
+                    <option value="daugoidau">Dầu gội đầu</option>
+                    <option value="suâtm">Sữa tắm</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Số người dự đoán tham gia</td>
+            <td><input type="number" placeholder="250000"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2"><input type="submit" value="Đồng ý"></td>
+        </tr>
+    </table>
+</body>
+</html>
