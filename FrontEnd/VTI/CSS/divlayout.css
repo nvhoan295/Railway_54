@@ -1,0 +1,60 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.menu {
+    background-color: gainsboro;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+}
+.banner {
+    background-color: wheat;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+}
+.main1 {
+    background-color: palevioletred;
+    height: 150px;
+}
+.main1_left {
+    float: left;
+    width: 33%;
+    background-color: blue;
+    height: 150px;
+}
+.main1_center {
+    float: left;
+    width: 33%;
+    background-color: blueviolet;
+    height: 150px;
+}
+.main1_right {
+    float: left;
+    width: 34%;
+    background-color: burlywood;
+    height: 150px;
+}
+.main2 {
+    width: 100%;
+}
+.main2_left {
+    float: left;
+    background-color: green;
+    height: 120px;
+    width: 50%;
+}
+.main2_right {
+    float: left;
+    background-color: red;
+    height: 120px;
+    width: 50%;
+}
+.footer {
+    float: left;
+    background-color: gray;
+    height: 50px;
+    width: 100%;
+}

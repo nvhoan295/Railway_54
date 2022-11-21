@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+    background-color: #aec5d1;
+    height: 60px;
+}
+
+.ul-menu {
+    display: flex;
+    height: 100%;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.ul-menu li {
+    list-style: none;
+    width: 250px;
+    height: 100%;
+}
+
+.ul-menu li a {
+    /* Bỏ gạch chân ở menu  */
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    /* Tạo dấu phân cách giữa các menu */
+    border-right: #73acc9 solid 2px;
+    /* Tạo màu cho cữ trong menu và in đậm chữ */
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    /* tạo dãn cách chữ trong menu vào giữa */
+    height: 45px;
+    padding-top: 15px;
+}
+.ul-menu li a:hover {
+    background-color: #e1e8ed;
+}

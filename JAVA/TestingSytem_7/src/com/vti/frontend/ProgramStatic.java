@@ -1,7 +1,6 @@
 package com.vti.frontend;
 
 import com.vti.backend.Exercise1;
-import com.vti.entity.exercise1.HinhHocException;
 
 public class ProgramStatic {
 	public static void main(String[] args) {

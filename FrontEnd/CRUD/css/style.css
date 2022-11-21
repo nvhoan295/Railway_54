@@ -1,0 +1,31 @@
+table, tr, th, td {
+    border: 1px solid black;
+    padding: 5px 20px;
+}
+table{
+    width: 80%;
+    border-collapse: collapse;
+}
+
+#info-popup{
+    background-color: antiquewhite;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 5px;
+    left: 30%;
+    top: 30%;
+    padding: 10px;
+    position: fixed;
+    display: none;
+}
+
+#btn-save-wrap{
+    text-align: right;
+}
+#btn-cancel{
+    margin-right: 10px;
+}
+#close-wrap{
+    text-align: right;
+    margin-right: 10px;
+}
