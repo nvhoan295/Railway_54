@@ -1,0 +1,18 @@
+#home, #cloud{
+    font-size: 50px;
+}
+#them{
+    font-size: 30px;
+    color: green;
+}
+#themmoi{
+    color: green;
+}
+#huy{
+    color: red;
+}
+#myModal{
+    display: none;
+    position: fixed;
+    left: 30%;
+}

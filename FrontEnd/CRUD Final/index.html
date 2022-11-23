@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<link rel="stylesheet" href="/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<title>Document</title>
+</head>
+
+<body>
+    <div id="warper">
+        <div id="nav">
+
+        </div>
+
+        <!-- Content -->
+        <div id="content">
+
+            <div class="container">
+                <h2 style="text-align: center;">Quản lý Group</h2>
+                <!-- Trigger the modal with a button -->
+                <!-- <button id="them" type="button" class="btn btn-info btn-lg">Thêm</button> -->
+
+                <!-- data-toggle="modal" data-target="#myModal" -->
+                <!-- Modal -->
+                <div id="myModal">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" id="close" class="close">&times;</button>
+                                <h4 class="modal-title">Thông Tin Group</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+
+                                        <input type="hidden" class="form-control" id="group-id">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usr">Group Name</label>
+                                        <input type="text" class="form-control" id="groupName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usr">Member</label>
+                                        <input type="number" class="form-control" id="member">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usr">Creator:</label>
+                                        <input type="text" class="form-control" id="creator">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">CreateDate:</label>
+                                        <input type="text" class="form-control" id="crateDate">
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" id="huy" class="btn btn-default">Huỷ</button>
+                                <button type="button" id="themmoi" class="btn btn-default" onclick="saveGroup()">Thêm
+                                    mới</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="them" href="#"><span class="fa-solid fa-plus"></span> Add</a></li>
+                </ul>
+                <h2>Nguyễn Văn Hoàn</h2>
+                <p>Bài thu hoạch cuối kỳ Fontend Basic</p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>GroupName</th>
+                            <th>Member</th>
+                            <th>Creator</th>
+                            <th>CreateDate</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="footer">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="/js/jquery-3.6.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+</body>
+
+</html>
