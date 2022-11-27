@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.vti</groupId>
-	<artifactId>Demo</artifactId>
+	<artifactId>DemoHibrenate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Demo</name>
+	<name>DemoHibrenate</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -21,22 +21,19 @@
 			<scope>test</scope>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>6.1.5.Final</version>
-			<type>pom</type>
+			<version>5.4.17.Final</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.31</version>
+			<version>8.0.20</version>
 		</dependency>
-
 
 	</dependencies>
 </project>
